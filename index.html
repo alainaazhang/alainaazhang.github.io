@@ -3,200 +3,208 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>alaina zhang</title>
-  <meta name="description" content="Alaina Zhang: Materials Science & Engineering at Stanford. Semiconductors, advanced packaging, power electronics, and more efficient data centers.">
+  <title>Alaina Zhang · Materials Science &amp; Engineering, Stanford</title>
+  <meta name="description" content="Alaina Zhang is a Stanford Materials Science & Engineering student doing research on aqueous zinc batteries (Cui Lab), desalination cost modeling (Mauter Lab), and kelp ecosystem economics, and working on semiconductors and data-center efficiency.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;700;800&family=Fraunces:ital,opsz,wght@0,9..144,500;1,9..144,400;1,9..144,600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;700;800&family=Fraunces:ital,opsz,wght@0,9..144,500;1,9..144,400;1,9..144,600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --paper: #fbfaf7;
-      --ink: #17161a;
-      --soft: #6d6a72;
-      --hair: #e4e0d8;
-      --heat: #d6402f;
-      --cardinal: #8c1515;
+      --paper: #fbfaf7; --ink: #17161a; --soft: #6d6a72; --hair: #e4e0d8;
+      --heat: #d6402f; --cardinal: #8c1515;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-    body {
-      background-color: var(--paper);
-      background-image: radial-gradient(#d9d4ca 1px, transparent 1px);
-      background-size: 22px 22px;
-      color: var(--ink);
-      font-family: "Inter Tight", system-ui, sans-serif;
-      font-size: 17px;
-      line-height: 1.6;
-    }
+    body { background-color: var(--paper); background-image: radial-gradient(#d9d4ca 1px, transparent 1px); background-size: 22px 22px;
+      color: var(--ink); font-family: "Inter Tight", system-ui, sans-serif; font-size: 17px; line-height: 1.6; }
     .mono { font-family: "JetBrains Mono", ui-monospace, monospace; }
     .serif { font-family: "Fraunces", Georgia, serif; }
     a { color: inherit; }
     ::selection { background: var(--heat); color: #fff; }
+    .wrap { max-width: 1180px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 40px); }
 
     /* nav */
     .nav { position: sticky; top: 0; z-index: 10; display: flex; justify-content: space-between; align-items: center;
-      padding: 14px clamp(16px, 4vw, 40px); background: rgba(251, 250, 247, .85); backdrop-filter: blur(8px); }
+      padding: 14px clamp(16px, 4vw, 40px); background: rgba(251, 250, 247, .88); backdrop-filter: blur(8px); }
     .brand { font-weight: 800; text-decoration: none; letter-spacing: -.02em; }
-    .nav nav { display: flex; gap: clamp(14px, 3vw, 28px); font-size: .8rem; }
+    .nav nav { display: flex; gap: clamp(12px, 2.6vw, 26px); font-size: .8rem; }
     .nav nav a { text-decoration: none; }
     .nav nav a::before { content: "/"; color: var(--heat); margin-right: 3px; }
     .nav nav a:hover { text-decoration: underline; text-underline-offset: 4px; }
 
-    .wrap { max-width: 1180px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 40px); }
-
     /* hero */
     .hero { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); align-items: center; gap: 24px;
-      min-height: calc(100vh - 60px); padding: 40px 0 60px; }
+      min-height: calc(100vh - 60px); padding: 40px 0 40px; }
     .hero h1 { font-size: clamp(3rem, 8vw, 5.6rem); font-weight: 800; letter-spacing: -.045em; line-height: .92; }
     .hero h1 em { font-family: "Fraunces", serif; font-weight: 400; letter-spacing: -.02em; }
     .role { margin-top: 18px; font-weight: 700; font-size: 1rem; }
-    .role span { color: var(--soft); font-weight: 500; }
+    .role span { display: block; color: var(--soft); font-weight: 500; }
     .icons { display: flex; gap: 14px; margin-top: 18px; }
     .icons a { width: 22px; height: 22px; display: block; transition: color .15s, transform .15s; }
     .icons a:hover { color: var(--heat); transform: translateY(-2px); }
     .icons svg { width: 100%; height: 100%; }
     .fig { font-size: .72rem; color: var(--soft); margin-top: 6px; text-align: right; }
-
     .xsec { width: 100%; height: auto; overflow: visible; }
-    .xsec .ln { fill: none; stroke: var(--ink); stroke-width: 1.2; stroke-dasharray: 1; stroke-dashoffset: 1;
-      animation: draw .9s ease-out forwards; animation-delay: var(--d); }
-    .xsec .dash { stroke-dasharray: 1; }
+    .xsec .ln { fill: none; stroke: var(--ink); stroke-width: 1.2; stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw .9s ease-out forwards; animation-delay: var(--d); }
     .xsec rect.ln { fill: rgba(255,255,255,.7); }
-    .xsec .heat { fill: none; stroke: var(--heat); stroke-width: 2.4; stroke-linecap: round;
-      stroke-dasharray: .14 .86; stroke-dashoffset: 1; opacity: 0;
+    .xsec .heat { fill: none; stroke: var(--heat); stroke-width: 2.4; stroke-linecap: round; stroke-dasharray: .14 .86; stroke-dashoffset: 1; opacity: 0;
       animation: rise 2.6s linear infinite; animation-delay: calc(4.2s + var(--h)); }
-    .xsec text { font-family: "JetBrains Mono", monospace; font-size: 15px; fill: var(--soft); opacity: 0;
-      animation: fade .6s ease forwards 3.8s; }
+    .xsec text { font-family: "JetBrains Mono", monospace; font-size: 15px; fill: var(--soft); opacity: 0; animation: fade .6s ease forwards 3.8s; }
     .xsec .die-label { font-size: 13px; fill: var(--ink); font-weight: 600; animation-delay: 2.6s; }
     .xsec .lead { stroke: var(--soft); stroke-width: .6; stroke-dasharray: 2 3; opacity: 0; animation: fade .6s ease forwards 3.8s; }
     @keyframes draw { to { stroke-dashoffset: 0; } }
     @keyframes fade { to { opacity: 1; } }
     @keyframes rise { 0% { stroke-dashoffset: 1; opacity: 0; } 10% { opacity: 1; } 85% { opacity: 1; } 100% { stroke-dashoffset: 0; opacity: 0; } }
 
+    /* curious */
+    .curious { text-align: center; padding: 20px 0 80px; }
+    .curious .lead-in { font-size: .95rem; color: var(--soft); margin-bottom: 6px; }
+    .curious .row { display: inline-flex; align-items: center; gap: 16px; }
+    .cbtn { width: 46px; height: 46px; border-radius: 50%; border: 0; background: var(--heat); color: #fff; font-size: 1.2rem; cursor: pointer;
+      display: grid; place-items: center; transition: transform .3s cubic-bezier(.3,1.6,.5,1); flex-shrink: 0; }
+    .cbtn:hover { transform: rotate(-90deg) scale(1.06); }
+    .word { font-family: "Fraunces", serif; font-style: italic; font-weight: 600; color: var(--heat); font-size: clamp(1.8rem, 5.6vw, 3.4rem);
+      letter-spacing: -.02em; line-height: 1.1; text-align: left; display: inline-block; min-width: 9ch; transition: opacity .25s, transform .25s; }
+    .word.out { opacity: 0; transform: translateY(10px); }
+
     /* sections */
-    section.block { padding: 72px 0; border-top: 1px solid var(--hair); }
+    section.block { padding: 76px 0; border-top: 1px solid var(--hair); }
     .eyebrow { font-size: .75rem; color: var(--heat); text-transform: uppercase; letter-spacing: .14em; }
     h2 { font-family: "Fraunces", serif; font-weight: 500; font-size: clamp(2rem, 4.5vw, 2.9rem); letter-spacing: -.02em; line-height: 1.1; margin: 6px 0 10px; }
     h2 em { font-style: italic; font-weight: 400; }
-    .sub { color: var(--soft); max-width: 560px; }
+    .sub { color: var(--soft); max-width: 600px; }
 
     /* about */
     .about { display: grid; grid-template-columns: 260px minmax(0, 1fr); gap: clamp(28px, 5vw, 64px); align-items: start; }
     .avatar { position: relative; width: 240px; height: 240px; }
     .ring { position: absolute; inset: 0; animation: spin 26s linear infinite; }
     .ring text { font-family: "JetBrains Mono", monospace; font-size: 12.5px; font-weight: 600; letter-spacing: 2px; fill: var(--ink); }
-    .avatar img { position: absolute; inset: 24px; width: calc(100% - 48px); height: calc(100% - 48px);
-      border-radius: 50%; object-fit: cover; border: 4px solid #fff; box-shadow: 0 0 0 1px var(--hair); }
+    .avatar img { position: absolute; inset: 24px; width: calc(100% - 48px); height: calc(100% - 48px); border-radius: 50%; object-fit: cover;
+      border: 4px solid #fff; box-shadow: 0 0 0 1px var(--hair); }
     @keyframes spin { to { transform: rotate(360deg); } }
-    .about p { max-width: 620px; margin-bottom: 18px; }
+    .about p { max-width: 640px; margin-bottom: 16px; }
     .cardinal { color: var(--cardinal); font-weight: 700; }
-    .timeline { list-style: none; border-left: 2px solid var(--hair); margin: 26px 0 0 6px; }
+    .timeline { list-style: none; border-left: 2px solid var(--hair); margin: 24px 0 0 6px; }
     .timeline li { position: relative; padding: 0 0 16px 22px; }
     .timeline li::before { content: ""; position: absolute; left: -7px; top: 7px; width: 12px; height: 12px; border-radius: 50%; background: #cfcac2; }
     .timeline li.now::before { background: var(--heat); box-shadow: 0 0 0 4px rgba(214, 64, 47, .18); }
     .timeline .label { display: block; font-size: .7rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--soft); }
     .timeline li.now .label { color: var(--heat); }
+    .facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin-top: 26px; max-width: 680px; }
+    .facts div { border-top: 1px solid var(--ink); padding-top: 8px; }
+    .facts b { display: block; font-family: "Fraunces", serif; font-weight: 500; font-size: 1.8rem; line-height: 1.1; letter-spacing: -.02em; }
+    .facts span { font-size: .8rem; color: var(--soft); }
 
-    /* periodic tiles */
-    .tiles { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 14px; margin-top: 32px; }
-    .tiles { gap: 22px 18px; padding: 6px; }
-    .tile { position: relative; background: #fff; border: 1px solid var(--ink); padding: 18px 18px 18px 44px;
-      transform: rotate(var(--tilt)); transition: transform .25s cubic-bezier(.3,1.6,.5,1), box-shadow .2s; }
-    .tile:hover { transform: rotate(0deg) translate(-3px, -3px); box-shadow: 5px 5px 0 var(--heat); z-index: 1; }
-    .tile .side { position: absolute; left: 12px; top: 18px; writing-mode: vertical-rl; transform: rotate(180deg);
-      font-size: .62rem; letter-spacing: .14em; text-transform: uppercase; color: var(--soft); white-space: nowrap; }
-    .tile .side::first-letter { color: var(--heat); }
-    .el { display: grid; grid-template-columns: 1fr; width: 92px; height: 92px; border: 1px solid var(--ink);
-      padding: 6px 8px; margin-bottom: 16px; position: relative; }
-    .el .z { font-size: .7rem; color: var(--soft); }
-    .el .sym { font-family: "Fraunces", serif; font-size: 1.9rem; font-weight: 500; line-height: 1; letter-spacing: -.02em; }
-    .el .nm { font-size: .55rem; color: var(--soft); align-self: end; line-height: 1.2; }
-    .tile h4 { font-weight: 700; font-size: 1.1rem; letter-spacing: -.01em; line-height: 1.25; }
-    .tile p { color: var(--soft); font-size: .93rem; margin-top: 4px; }
+    /* research */
+    .studies { display: grid; gap: 28px; margin-top: 36px; }
+    .study { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); gap: clamp(20px, 4vw, 48px); align-items: center;
+      background: #fff; border: 1px solid var(--ink); padding: clamp(18px, 3vw, 32px); }
+    .study.flip { grid-template-columns: minmax(0, 7fr) minmax(0, 4fr); }
+    .study.flip .study-fig { order: 2; }
+    .study-fig { position: relative; border: 1px dashed #c9c3b8; background: var(--paper); padding: 18px 14px 10px; }
+    .study-fig svg { width: 100%; height: auto; display: block; overflow: visible; }
+    .study-fig svg * { fill: none; stroke: var(--ink); stroke-width: 1.3; stroke-linecap: round; stroke-linejoin: round; }
+    .study-fig svg .thick { stroke-width: 3; }
+    .study-fig svg .hot { stroke: var(--heat); stroke-width: 1.8; }
+    .study-fig svg .dash { stroke-dasharray: 4 4; }
+    .study-fig svg .faint { stroke: #b9b3a8; }
+    .study-fig svg text { stroke: none; fill: var(--soft); font-family: "JetBrains Mono", monospace; font-size: 9px; }
+    .study-fig svg text.faint { fill: #a29c92; stroke: none; }
+    .study-fig .num { position: absolute; top: -12px; left: 12px; background: var(--heat); color: #fff; font-size: .72rem; padding: 2px 8px; }
+    .meta { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 16px; font-size: .74rem; color: var(--soft); text-transform: uppercase; letter-spacing: .06em; }
+    .meta span:first-child { color: var(--ink); font-weight: 600; }
+    .study h3 { font-family: "Fraunces", serif; font-weight: 500; font-size: clamp(1.4rem, 2.6vw, 1.9rem); line-height: 1.15; letter-spacing: -.015em; margin: 10px 0 10px; }
+    .study p { color: #3b3a3f; }
+    .chips { list-style: none; display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
+    .chips li { font-size: .7rem; border: 1px solid var(--hair); background: var(--paper); padding: 2px 8px; border-radius: 999px; }
+    .rlinks { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 14px; font-size: .8rem; }
+    .rlinks a { text-decoration: none; color: var(--heat); border-bottom: 1px solid currentColor; }
 
-    /* log */
-    .log { list-style: none; margin-top: 28px; border-top: 1px solid var(--ink); }
-    .log li { display: grid; grid-template-columns: 48px 150px minmax(0, 1fr) minmax(0, 1.4fr); gap: 16px; align-items: baseline;
-      padding: 18px 4px; border-bottom: 1px solid var(--hair); transition: background .15s; }
+    /* field notes */
+    .snaps { display: grid; grid-template-columns: 1.4fr 1.4fr 1fr 1fr 1fr; gap: 18px; margin-top: 40px; align-items: start; }
+    .snap { background: #fff; padding: 8px 8px 10px; box-shadow: 0 1px 0 var(--hair), 0 10px 24px rgba(0,0,0,.07); transform: rotate(var(--tilt));
+      transition: transform .3s cubic-bezier(.3,1.6,.5,1); position: relative; }
+    .snap::before { content: ""; position: absolute; top: -9px; left: 50%; width: 64px; height: 18px; transform: translateX(-50%) rotate(-3deg);
+      background: rgba(214, 64, 47, .22); }
+    .snap:hover { transform: rotate(0) scale(1.03); z-index: 1; }
+    .snap img { width: 100%; display: block; object-fit: cover; }
+    .snap.wide img { aspect-ratio: 4 / 3; }
+    .snap.tall img { aspect-ratio: 3 / 4.4; }
+    .snap figcaption { font-size: .66rem; color: var(--soft); margin-top: 8px; line-height: 1.35; }
+
+    /* recognition */
+    .two { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: clamp(28px, 5vw, 64px); margin-top: 32px; }
+    .awards { list-style: none; border-top: 1px solid var(--ink); }
+    .awards li { display: grid; grid-template-columns: 56px minmax(0, 1fr); gap: 12px; padding: 14px 0; border-bottom: 1px solid var(--hair); }
+    .awards .yr { color: var(--heat); font-size: .8rem; padding-top: 3px; }
+    .awards a { text-decoration: none; }
+    .awards a:hover strong { text-decoration: underline; text-underline-offset: 3px; }
+    .awards strong { display: block; font-size: 1.05rem; }
+    .awards span { color: var(--soft); font-size: .92rem; }
+    .press h4 { font-size: .75rem; text-transform: uppercase; letter-spacing: .14em; color: var(--soft); font-family: "JetBrains Mono", monospace; font-weight: 400; margin-bottom: 10px; }
+    .clip { display: block; text-decoration: none; padding: 12px 14px; margin-bottom: 10px; background: #fff; border: 1px solid var(--hair);
+      font-family: "Fraunces", serif; font-size: 1.02rem; line-height: 1.3; transition: border-color .15s, transform .15s; }
+    .clip span { display: block; font-size: .66rem; letter-spacing: .1em; text-transform: uppercase; color: var(--heat); margin-bottom: 2px; }
+    .clip em { font-style: normal; color: var(--soft); }
+    .clip:hover { border-color: var(--ink); transform: translateX(4px); }
+    .press .note { font-size: .85rem; color: var(--soft); margin-top: 6px; }
+    .press .note a { color: var(--heat); }
+
+    /* experience */
+    .log { list-style: none; margin-top: 30px; border-top: 1px solid var(--ink); }
+    .log li { display: grid; grid-template-columns: 170px minmax(0, 1fr) minmax(0, 1.3fr); gap: 18px; align-items: baseline; padding: 18px 4px; border-bottom: 1px solid var(--hair); }
     .log li:hover { background: #fff; }
-    .log .idx { color: var(--heat); font-size: .8rem; }
-    .log .tag { font-size: .72rem; color: var(--soft); text-transform: uppercase; letter-spacing: .1em; }
-    .log .what { font-weight: 700; font-size: 1.15rem; letter-spacing: -.01em; }
-    .log .desc { color: var(--soft); }
+    .log .when { font-size: .74rem; color: var(--heat); }
+    .log .what { font-size: 1.05rem; }
+    .log .what em { color: var(--soft); }
+    .log .desc { color: var(--soft); font-size: .95rem; }
+    .log .desc strong { color: var(--ink); }
+    .kit { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; margin-top: 36px; }
+    .kit div { border-top: 1px solid var(--ink); padding-top: 10px; }
+    .kit h4 { font-family: "JetBrains Mono", monospace; font-weight: 400; font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: var(--soft); margin-bottom: 4px; }
 
-    /* nav clock (thrive) */
-    .clock { font-size: .75rem; font-style: italic; font-weight: 600; letter-spacing: .02em; color: var(--ink); display: flex; gap: 22px; }
-    .clock span:last-child { color: var(--soft); font-style: normal; font-weight: 400; }
-
-    /* curious (d.school) */
-    .curious { text-align: center; padding: 36px 0 84px; }
-    .curious .lead-in { font-size: .95rem; color: var(--soft); margin-bottom: 6px; }
-    .curious .row { display: inline-flex; align-items: center; gap: 16px; }
-    .cbtn { width: 46px; height: 46px; border-radius: 50%; border: 0; background: var(--heat); color: #fff; font-size: 1.2rem; cursor: pointer;
-      display: grid; place-items: center; transition: transform .3s cubic-bezier(.3,1.6,.5,1); flex-shrink: 0; }
-    .cbtn:hover { transform: rotate(-90deg) scale(1.06); }
-    .word { font-family: "Fraunces", serif; font-style: italic; font-weight: 600; color: var(--heat);
-      font-size: clamp(2rem, 6vw, 3.6rem); letter-spacing: -.02em; line-height: 1.1; text-align: left; display: inline-block; min-width: 9ch;
-      transition: opacity .25s, transform .25s; }
-    .word.out { opacity: 0; transform: translateY(10px); }
-
-    /* red paint band (d.school) */
-    .band { position: relative; background: var(--heat); color: #fff; margin-top: 80px; }
-    .torn { position: absolute; left: 0; bottom: 100%; width: 100%; height: 46px; fill: var(--heat); display: block; }
-    .band .wrap { padding-top: 56px; padding-bottom: 72px; }
+    /* contact band */
+    .band { position: relative; background: var(--heat); color: #fff; margin-top: 70px; }
+    .torn { position: absolute; left: 0; bottom: calc(100% - 1px); width: 100%; height: 46px; fill: var(--heat); display: block; }
+    .band .wrap { padding-top: 56px; padding-bottom: 64px; }
     .band .eyebrow { color: rgba(255,255,255,.75); }
-    .band .say { font-family: "Fraunces", serif; font-size: clamp(1.3rem, 2.6vw, 1.7rem); line-height: 1.35; max-width: 640px; margin: 10px 0 26px; }
+    .band .say { font-family: "Fraunces", serif; font-size: clamp(1.3rem, 2.6vw, 1.7rem); line-height: 1.35; max-width: 660px; margin: 10px 0 26px; }
     .big { display: inline-block; font-weight: 800; font-size: clamp(2.4rem, 8vw, 5rem); letter-spacing: -.045em; line-height: 1; text-decoration: none; }
     .big span { display: inline-block; transition: transform .2s; }
     .big:hover span { transform: translateX(12px); }
     .band .links { display: flex; flex-wrap: wrap; gap: 10px 26px; margin-top: 26px; font-size: .85rem; }
-    .band .links a { text-decoration: none; border-bottom: 1px solid rgba(255,255,255,.4); }
+    .band .links a { text-decoration: none; border-bottom: 1px solid rgba(255,255,255,.45); }
     .band .links a:hover { border-color: #fff; }
+    .band footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; margin-top: 64px; padding-top: 18px;
+      border-top: 1px solid rgba(255,255,255,.3); font-size: .72rem; color: rgba(255,255,255,.8); }
 
-    /* black footer with spinning die stack (thrive) */
-    .end { background: #050505; color: #e9e6e1; text-align: center; padding: 64px 16px 36px; overflow: hidden; }
-    .end .clock { color: #e9e6e1; justify-content: center; }
-    .end .clock span:last-child { color: #e9e6e1; font-style: italic; font-weight: 600; }
-    .scene { height: 300px; perspective: 900px; display: grid; place-items: center; }
-    .obj { position: relative; width: 0; height: 0; transform-style: preserve-3d; animation: turn 14s linear infinite; }
-    .obj .f { position: absolute; left: 0; top: 0; display: block; backface-visibility: visible; }
-    .obj .top { background: #e3392b; }
-    .obj .bot { background: #4a0805; }
-    .obj .fr, .obj .bk { background: #a3150e; }
-    .obj .lf, .obj .rt { background: #6f0d08; }
-    @keyframes turn { from { transform: rotateX(-28deg) rotateY(0deg); } to { transform: rotateX(-28deg) rotateY(360deg); } }
-    .end .name { font-size: .8rem; letter-spacing: .06em; text-transform: uppercase; margin-top: 18px; }
-    .end .info { display: inline-block; font-size: .8rem; margin-top: 8px; text-transform: uppercase; text-underline-offset: 3px; }
-    .end small { display: block; margin-top: 30px; font-size: .68rem; color: #77736d; }
-
-    @media (max-width: 860px) {
+    @media (max-width: 900px) {
       .hero { grid-template-columns: 1fr; min-height: 0; padding-top: 24px; }
-      .about { grid-template-columns: 1fr; }
+      .about, .two { grid-template-columns: 1fr; }
       .avatar { width: 200px; height: 200px; }
-      .nav .clock { display: none; }
-      .nav nav { gap: 12px; }
-      .log li { grid-template-columns: 36px minmax(0, 1fr); gap: 2px 12px; }
-      .log .tag { grid-column: 2; grid-row: 1; }
-      .log .what, .log .desc { grid-column: 2; }
-      .log .idx { grid-row: 1 / span 3; }
+      .study, .study.flip { grid-template-columns: 1fr; }
+      .study.flip .study-fig { order: 0; }
+      .snaps { grid-template-columns: 1fr 1fr; }
+      .snap.wide { grid-column: span 2; }
+      .log li { grid-template-columns: 1fr; gap: 2px; }
+      .nav nav a.opt { display: none; }
     }
     @media (prefers-reduced-motion: reduce) {
       .xsec .ln { animation: none; stroke-dashoffset: 0; }
       .xsec text, .xsec .lead { animation: none; opacity: 1; }
       .xsec .heat { animation: none; opacity: .8; stroke-dasharray: none; }
-      .ring, .obj { animation: none; }
-      .obj { transform: rotateX(-28deg) rotateY(35deg); }
+      .ring { animation: none; }
     }
   </style>
 </head>
 <body>
   <header class="nav">
     <a class="brand" href="#">alaina zhang</a>
-    <span class="clock mono" aria-hidden="true"><span class="js-date"></span><span class="js-time"></span></span>
     <nav class="mono">
-      <a href="#about">about</a>
-      <a href="#stack">stack</a>
-      <a href="#log">log</a>
+      <a class="opt" href="#about">about</a>
+      <a href="#research">research</a>
+      <a href="#recognition">recognition</a>
+      <a class="opt" href="#experience">experience</a>
       <a href="#contact">contact</a>
     </nav>
   </header>
@@ -205,11 +213,12 @@
     <section class="hero">
       <div>
         <h1>alaina<br><em>zhang</em></h1>
-        <p class="role">materials science &amp; engineering @ stanford <span>/ semiconductors · data centers · deep tech</span></p>
+        <p class="role">materials science &amp; engineering @ stanford
+          <span>batteries · water · climate economics → semiconductors &amp; data centers</span></p>
         <div class="icons">
-          <a href="https://github.com/alainaazhang" target="_blank" rel="noreferrer" aria-label="GitHub"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.56-.29-5.25-1.28-5.25-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.38-5.26 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z"/></svg></a>
           <a href="https://www.linkedin.com/in/alainazhang/" target="_blank" rel="noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg></a>
           <a href="mailto:alainaz@stanford.edu" aria-label="Email"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" d="M3 6h18v12H3z M3 6l9 7 9-7"/></svg></a>
+          <a href="https://github.com/alainaazhang" target="_blank" rel="noreferrer" aria-label="GitHub"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.56-.29-5.25-1.28-5.25-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.38-5.26 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z"/></svg></a>
         </div>
       </div>
       <figure>
@@ -227,7 +236,7 @@
       <p class="lead-in">I'm curious about…</p>
       <div class="row">
         <button class="cbtn" type="button" aria-label="Show another topic">↓</button>
-        <span class="word" id="word">semiconductors</span>
+        <span class="word" id="word">zinc batteries</span>
       </div>
     </section>
 
@@ -236,127 +245,173 @@
         <div class="avatar">
           <svg class="ring" viewBox="0 0 200 200" aria-hidden="true">
             <defs><path id="circle" d="M100,100 m-88,0 a88,88 0 1,1 176,0 a88,88 0 1,1 -176,0"/></defs>
-            <text><textPath href="#circle" textLength="550" lengthAdjust="spacing">ALAINA ZHANG · MS&amp;E · STANFORD · </textPath></text>
+            <text><textPath href="#circle" textLength="550" lengthAdjust="spacing">ALAINA ZHANG · MATSCI · STANFORD · </textPath></text>
           </svg>
           <img src="photo.jpg" alt="Alaina Zhang">
         </div>
         <div>
           <span class="eyebrow mono">00 / about</span>
           <h2>Hey there!</h2>
-          <p>I'm Alaina, a <span class="cardinal">Stanford</span> Materials Science and Engineering student interested in
-          <strong>defense technology, hardware, and deep tech</strong>. I care most about the physical layer of computing:
-          the materials, fabrication, and packaging that make chips work, and the power and heat problems that come with running them at data-center scale.</p>
-          <p>My work so far has covered battery research, water-system management, and science-policy advocacy.
-          I like projects that connect technical research with <em class="serif">commercialization</em> and <em class="serif">policy</em>.</p>
+          <p>I'm Alaina, a <span class="cardinal">Stanford</span> student studying Materials Science and Engineering, with a minor in Management
+          Science and Engineering. My research has moved from kelp farms in Narragansett Bay to desalination cost models to
+          zinc-battery electrochemistry in <strong>Yi Cui's lab</strong>.</p>
+          <p>What connects it all: I like finding the hidden variable that a standard model leaves out, then building the research,
+          the economics, and the policy case around it. Next, I want to bring that to <strong>semiconductors, advanced packaging, power electronics,
+          and data-center energy and cooling</strong>, along with defense and deep-tech hardware.</p>
           <ol class="timeline">
-            <li class="now"><span class="label mono">now</span>Materials Science &amp; Engineering @ Stanford</li>
-            <li><span class="label mono">previously</span>Battery research · Water systems · Policy advocacy (H.R. 2950) · TreeHacks · ASES</li>
+            <li class="now"><span class="label mono">now</span>Researcher, Cui Lab · Materials Science &amp; Engineering @ Stanford ('29)</li>
+            <li><span class="label mono">previously</span>Mauter Lab · Brown Ocean, Climate &amp; Ecosystems Lab · Founder, Harvesting Change</li>
           </ol>
+          <div class="facts">
+            <div><b>3</b><span>research labs</span></div>
+            <div><b>ISEF</b><span>2025 finalist</span></div>
+            <div><b>Top 300</b><span>Regeneron STS</span></div>
+            <div><b>H.R. 2950</b><span>research contributed</span></div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="block" id="stack">
-      <span class="eyebrow mono">01 / interests</span>
-      <h2>the <em>material</em> stack</h2>
-      <p class="sub">What I want to work on, roughly from the transistor up to the data center.</p>
-      <div class="tiles">
-        <article class="tile" style="--tilt:-1.2deg">
-          <span class="side mono">● semiconductors</span>
-          <div class="el"><span class="z mono">14</span><span class="sym">Si</span><span class="nm mono">silicon</span></div>
-          <h4>Chip materials & fabrication</h4>
-          <p>The materials and process steps that decide what a chip can do.</p>
-        </article>
-        <article class="tile" style="--tilt:0.8deg">
-          <span class="side mono">● semiconductors</span>
-          <div class="el"><span class="z mono">29</span><span class="sym">Cu</span><span class="nm mono">copper</span></div>
-          <h4>Advanced packaging</h4>
-          <p>Chiplets, hybrid bonding, and interconnects. More performance from the package itself.</p>
-        </article>
-        <article class="tile" style="--tilt:-0.5deg">
-          <span class="side mono">● semiconductors</span>
-          <div class="el"><span class="z mono">—</span><span class="sym">GaN</span><span class="nm mono">gallium nitride</span></div>
-          <h4>Power electronics</h4>
-          <p>Wide-bandgap devices that waste less energy converting power.</p>
-        </article>
-        <article class="tile" style="--tilt:1.1deg">
-          <span class="side mono">● data centers</span>
-          <div class="el"><span class="z mono">—</span><span class="sym">pJ</span><span class="nm mono">picojoules / op</span></div>
-          <h4>Energy-efficient computing</h4>
-          <p>Cutting the energy cost of every operation in the data center.</p>
-        </article>
-        <article class="tile" style="--tilt:-0.9deg">
-          <span class="side mono">● data centers</span>
-          <div class="el"><span class="z mono">—</span><span class="sym">W/mK</span><span class="nm mono">thermal conductivity</span></div>
-          <h4>Thermal management & cooling</h4>
-          <p>Moving heat out of very dense hardware: TIMs, cold plates, liquid cooling.</p>
-        </article>
-        <article class="tile" style="--tilt:0.6deg">
-          <span class="side mono">● data centers</span>
-          <div class="el"><span class="z mono">6</span><span class="sym">C</span><span class="nm mono">embodied carbon</span></div>
-          <h4>Sustainable materials</h4>
-          <p>Lower-impact materials for the infrastructure behind computing.</p>
-        </article>
-        <article class="tile" style="--tilt:-0.7deg">
-          <span class="side mono">● deep tech</span>
-          <div class="el"><span class="z mono">22</span><span class="sym">Ti</span><span class="nm mono">titanium</span></div>
-          <h4>Defense tech & hardware</h4>
-          <p>Hard-tech systems where materials are the edge.</p>
-        </article>
+    <section class="block" id="research">
+      <span class="eyebrow mono">01 / research</span>
+      <h2>the <em>research</em></h2>
+      <p class="sub">Three labs, one habit: find the variable the standard model leaves out.</p>
+      <div class="studies">
+      <article class="study">
+        <div class="study-fig"><svg viewBox="0 0 200 120" aria-hidden="true">
+  <rect x="20" y="14" width="160" height="92" rx="4"/>
+  <line x1="44" y1="22" x2="44" y2="98" class="thick"/>
+  <line x1="156" y1="22" x2="156" y2="98" class="thick"/>
+  <path d="M46,40 l12,-3 l-6,-4 l10,-2 M46,62 l16,2 l-7,5 l13,2 M46,82 l9,-4 l-3,7 l11,-2" class="hot"/>
+  <circle cx="70" cy="30" r="3"/><circle cx="78" cy="50" r="2.4"/><circle cx="66" cy="72" r="3.2"/><circle cx="84" cy="88" r="2"/>
+  <text x="44" y="116" text-anchor="middle">Zn</text><text x="156" y="116" text-anchor="middle">cathode</text>
+  <text x="100" y="64" text-anchor="middle" class="faint">ZnSO₄ (aq)</text>
+</svg><span class="mono num">01</span></div>
+        <div class="study-text">
+          <p class="meta mono"><span>Prof. Yi Cui Lab · Stanford</span><span>May 2026 – present</span></p>
+          <h3>Taming zinc dendrites in aqueous batteries</h3>
+          <p>Aqueous zinc batteries are cheap and safe, but hydrogen evolution at the anode drives dendrite growth that kills cycle life. I'm quantifying how <strong>polarization affects zinc deposition</strong>, with the goal of suppressing HER-induced dendrites and improving cycling performance.</p>
+          <ul class="chips mono"><li>electrochemistry</li><li>Zn anodes</li><li>HER</li><li>Origin</li></ul>
+          
+        </div>
+      </article>
+      <article class="study flip">
+        <div class="study-fig"><svg viewBox="0 0 200 120" aria-hidden="true">
+  <rect x="16" y="20" width="168" height="80" rx="4"/>
+  <line x1="16" y1="60" x2="184" y2="60" class="dash thick"/>
+  <path d="M28,40 h120 m-8,-6 l8,6 l-8,6" />
+  <path d="M60,46 v26 m-5,-6 l5,6 l5,-6 M100,46 v26 m-5,-6 l5,6 l5,-6 M140,46 v26 m-5,-6 l5,6 l5,-6" class="hot"/>
+  <path d="M28,84 h120 m-8,-6 l8,6 l-8,6"/>
+  <text x="100" y="14" text-anchor="middle">feed → brine</text><text x="100" y="114" text-anchor="middle">permeate</text>
+  <text x="188" y="64" class="faint">RO</text>
+</svg><span class="mono num">02</span></div>
+        <div class="study-text">
+          <p class="meta mono"><span>Prof. Meagan Mauter Lab · Stanford</span><span>Apr – Sep 2026</span></p>
+          <h3>What actually drives the cost of desalination</h3>
+          <p>Existing desalination cost models abstract away design-level drivers, which hides how sensitive cost really is to design choices. I built <strong>modular costing functions in WaterTAP</strong> that link reverse-osmosis system architecture to lifecycle cost.</p>
+          <ul class="chips mono"><li>reverse osmosis</li><li>techno-economics</li><li>WaterTAP</li><li>Python</li></ul>
+          
+        </div>
+      </article>
+      <article class="study">
+        <div class="study-fig"><svg viewBox="0 0 200 120" aria-hidden="true">
+  <path d="M0,22 q12,-6 25,0 t25,0 t25,0 t25,0 t25,0 t25,0 t25,0 t25,0" class="faint"/>
+  <line x1="10" y1="40" x2="190" y2="40"/>
+  <circle cx="40" cy="30" r="6"/><circle cx="100" cy="30" r="6"/><circle cx="160" cy="30" r="6"/>
+  <line x1="40" y1="36" x2="40" y2="40"/><line x1="100" y1="36" x2="100" y2="40"/><line x1="160" y1="36" x2="160" y2="40"/>
+  <path d="M30,40 c-6,20 6,34 -2,62 M58,40 c8,22 -6,36 4,56 M82,40 c-8,18 8,40 -4,64 M120,40 c6,20 -6,30 2,58 M140,40 c-6,26 8,34 -2,52 M172,40 c6,18 -4,38 4,60" class="hot"/>
+  <text x="100" y="116" text-anchor="middle">sugar kelp longline</text>
+</svg><span class="mono num">03</span></div>
+        <div class="study-text">
+          <p class="meta mono"><span>Ocean, Climate &amp; Ecosystems Lab · Brown University</span><span>Nov 2023 – May 2025</span></p>
+          <h3>Pricing kelp and coastal restoration correctly</h3>
+          <p>Standard ROI models for coastal restoration ignore nutrient-flow externalities, so they systematically misprice how well projects scale. I rebuilt the model from first principles using cross-sector data from <strong>300+ stakeholders</strong> in Narragansett Bay. The findings contributed to <strong>H.R. 2950</strong>, and I presented the work at <strong>AGU 2024</strong> and as an <strong>ISEF 2025 finalist</strong>.</p>
+          <ul class="chips mono"><li>biogeochemistry</li><li>ecological economics</li><li>policy</li></ul>
+          <div class="rlinks mono"><a href="https://isef.net/project/eaev042-kelp-narragansett-bay-ecosystem" target="_blank" rel="noreferrer">ISEF project ↗</a><a href="https://drive.google.com/file/d/151z7Ql85aqM777XCheUaM7q7RK6rTD4d/view?usp=sharing" target="_blank" rel="noreferrer">AGU 2024 talk ↗</a><a href="https://drive.google.com/file/d/1Ib7TZGqTUNfFpEqgxEsL-H7ydPURWIaK/view?usp=drive_link" target="_blank" rel="noreferrer">AGU Q&amp;A ↗</a></div>
+        </div>
+      </article>
       </div>
     </section>
 
-    <section class="block" id="log">
-      <span class="eyebrow mono">02 / experience</span>
-      <h2>lab <em>notebook</em></h2>
-      <p class="sub">Research, infrastructure, policy, and working with startups.</p>
-      <ol class="log">
-        <li><span class="idx mono">01</span><span class="tag mono">research</span><span class="what">Battery research</span><span class="desc">Materials research for energy storage.</span></li>
-        <li><span class="idx mono">02</span><span class="tag mono">infrastructure</span><span class="what">Water-system management</span><span class="desc">Running and improving water infrastructure.</span></li>
-        <li><span class="idx mono">03</span><span class="tag mono">policy</span><span class="what">Science-policy advocacy</span><span class="desc">Advocacy work, including on H.R. 2950.</span></li>
-        <li><span class="idx mono">04</span><span class="tag mono">tech</span><span class="what">TreeHacks</span><span class="desc">Working with technology companies at Stanford's flagship hackathon.</span></li>
-        <li><span class="idx mono">05</span><span class="tag mono">venture</span><span class="what">ASES</span><span class="desc">Working with venture firms on the commercial side of deep tech.</span></li>
-      </ol>
+    <section class="block" id="field">
+      <span class="eyebrow mono">02 / field notes</span>
+      <h2>out of the <em>lab</em></h2>
+      <p class="sub">Growing sugar kelp in Narragansett Bay, presenting the results, and bringing them to Capitol Hill.</p>
+      <div class="snaps">
+        <figure class="snap wide" style="--tilt:-2.0deg"><img src="images/kelp-line.jpg" alt="The sugar kelp longline in the water, Narragansett Bay" loading="lazy"><figcaption class="mono">The sugar kelp longline in the water, Narragansett Bay</figcaption></figure>
+        <figure class="snap wide" style="--tilt:1.4deg"><img src="images/kelp-deploy.jpg" alt="Deploying the kelp farm from the boat" loading="lazy"><figcaption class="mono">Deploying the kelp farm from the boat</figcaption></figure>
+        <figure class="snap tall" style="--tilt:-1.0deg"><img src="images/science-fair.jpg" alt="Presenting the kelp research at the science fair" loading="lazy"><figcaption class="mono">Presenting the kelp research at the science fair</figcaption></figure>
+        <figure class="snap tall" style="--tilt:1.8deg"><img src="images/capitol-magaziner.jpg" alt="Capitol Hill advocacy with Rep. Seth Magaziner" loading="lazy"><figcaption class="mono">Capitol Hill advocacy with Rep. Seth Magaziner</figcaption></figure>
+        <figure class="snap tall" style="--tilt:-1.6deg"><img src="images/rieea.jpg" alt="RIEEA Youth of the Year" loading="lazy"><figcaption class="mono">RIEEA Youth of the Year</figcaption></figure>
+      </div>
     </section>
 
+    <section class="block" id="recognition">
+      <span class="eyebrow mono">03 / recognition</span>
+      <h2>awards &amp; <em>press</em></h2>
+      <div class="two">
+        <ol class="awards">
+        <li><span class="yr mono">2025</span><a href="https://isef.net/project/eaev042-kelp-narragansett-bay-ecosystem" target="_blank" rel="noreferrer"><strong>ISEF Finalist</strong><span>NOAA Taking the Pulse of the Planet First Award · Fondazione Bruno Kessler (FBK) Award</span></a></li>
+        <li><span class="yr mono">2025</span><a href="https://www.societyforscience.org/regeneron-sts/2025-scholars/" target="_blank" rel="noreferrer"><strong>Regeneron Science Talent Search</strong><span>Top 300 Scholar</span></a></li>
+        <li><span class="yr mono">2025</span><a href="https://www.ed.gov/media/document/2025-psp-semifinalist-list-109853.pdf" target="_blank" rel="noreferrer"><strong>U.S. Presidential Scholars</strong><span>Semifinalist</span></a></li>
+        <li><span class="yr mono">2025</span><a href="https://heyrhody.com/stories/watch-enyu-alaina-zhang-transform-kelp-into-a-sustainable-solution,105223" target="_blank" rel="noreferrer"><strong>HeyRhody</strong><span>Who to Watch</span></a></li>
+        <li><span class="yr mono">2024</span><a href="https://drive.google.com/file/d/151z7Ql85aqM777XCheUaM7q7RK6rTD4d/view?usp=sharing" target="_blank" rel="noreferrer"><strong>American Geophysical Union</strong><span>Ocean Sciences talk: biogeochemical climate solutions in the Narragansett Bay estuary</span></a></li>
+        <li><span class="yr mono">2024</span><a href="https://www.rieea.org/2024-ee-award-winners-announced/" target="_blank" rel="noreferrer"><strong>Rhode Island Environmental Education Association</strong><span>Youth of the Year</span></a></li>
+        <li><span class="yr mono">2024</span><a href="https://www.wef.org/contentassets/7ad1256608a4413c9846ffc1a4d663f0/2024-sjwp-state-winners.pdf" target="_blank" rel="noreferrer"><strong>Stockholm Junior Water Prize</strong><span>State winner</span></a></li>
+        <li><span class="yr mono">—</span><a href="https://www.nshss.org/scholarships/current-winners/alaina-zhang/" target="_blank" rel="noreferrer"><strong>NSHSS</strong><span>Earth Day Award</span></a></li>
+        </ol>
+        <div class="press">
+          <h4>in the news</h4>
+        <a class="clip" href="https://heyrhody.com/stories/watch-enyu-alaina-zhang-transform-kelp-into-a-sustainable-solution,105223" target="_blank" rel="noreferrer"><span class="mono">HeyRhody</span>Watch Enyu Alaina Zhang transform kelp into a sustainable solution <em>↗</em></a>
+        <a class="clip" href="https://eastbayri.com/stories/in-portsmouth-kelp-for-the-environment,130500" target="_blank" rel="noreferrer"><span class="mono">EastBayRI</span>In Portsmouth, kelp for the environment <em>↗</em></a>
+        <a class="clip" href="https://www.eastbayri.com/stories/portsmouth-student-recognized-for-environmental-advocacy,125399" target="_blank" rel="noreferrer"><span class="mono">EastBayRI</span>Portsmouth student recognized for environmental advocacy <em>↗</em></a>
+        <a class="clip" href="https://patch.com/rhode-island/portsmouth/portsmouth-students-research-helps-ris-coastal-environment" target="_blank" rel="noreferrer"><span class="mono">Patch</span>Portsmouth student's research helps RI's coastal environment <em>↗</em></a>
+        <a class="clip" href="https://www.thewesterlysun.com/lifestyle/front-porch-news/rieea-honors-educators-at-environmental-education-awards-ceremony/article_aae91ea0-75d7-11ef-979c-774d35445de0.html" target="_blank" rel="noreferrer"><span class="mono">The Westerly Sun</span>RIEEA honors educators at environmental education awards <em>↗</em></a>
+        <a class="clip" href="http://www.crmc.ri.gov/news/2024_0403_sciencefair.html" target="_blank" rel="noreferrer"><span class="mono">RI CRMC</span>Coastal Resources Management Council science fair news <em>↗</em></a>
+        <a class="clip" href="https://issuu.com/portsmouthabbeyschool/docs/summer24_bulletin_digital" target="_blank" rel="noreferrer"><span class="mono">Portsmouth Abbey</span>Summer Bulletin 2024 <em>↗</em></a>
+          <p class="note">Also covered by CBS. Watch the <a href="https://drive.google.com/file/d/1UjflJ87akqetgLuVSAe8OJyYp2S_Dqe_/view?usp=sharing" target="_blank" rel="noreferrer">Capitol Hill advocacy video ↗</a>.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="experience">
+      <span class="eyebrow mono">04 / experience</span>
+      <h2>building <em>around</em> the research</h2>
+      <p class="sub">Startups, venture, and the Stanford tech community.</p>
+      <ol class="log">
+        <li><span class="when mono">Oct 2025 – Jun 2026</span><span class="what"><strong>Sponsorship Organizer</strong> <em class="serif">at</em> TreeHacks 2026</span><span class="desc">Rebuilt sponsor outreach around relationship depth instead of deal size, across 30+ companies including OpenAI, Logitech, and Midjourney. Brought in <strong>$500K+</strong> in partnerships.</span></li>
+        <li><span class="when mono">May 2026 – present</span><span class="what"><strong>Director of Engagement</strong> <em class="serif">at</em> Stanford ASES</span><span class="desc">Replaced big networking events with small curated dinners that mirror how GPs actually meet founders. Hosted GPs from a16z, Pear, BoxGroup, and others.</span></li>
+        <li><span class="when mono">Jan 2026 – present</span><span class="what"><strong>Director of Sponsorship</strong> <em class="serif">at</em> Stanford ASES Summit</span><span class="desc">Built one partnership strategy across 20+ startups, VCs, and tech firms to replace fragmented outreach.</span></li>
+        <li><span class="when mono">Apr 2026 – present</span><span class="what"><strong>VP of Events</strong> <em class="serif">at</em> Stanford Women in Technology Entrepreneurship</span><span class="desc">Designing events that grow a founder and investor network for women in tech.</span></li>
+        <li><span class="when mono">Oct 2025 – Jan 2026</span><span class="what"><strong>Product &amp; Growth Intern</strong> <em class="serif">at</em> Thirdlayer (Dex AI CRM)</span><span class="desc">Ran 30+ user interviews and traced AI context-memory failures to inconsistent data input, not model limits. Grew organic content to <strong>150K+ views</strong> in one month.</span></li>
+        <li><span class="when mono">Oct 2023 – Jun 2025</span><span class="what"><strong>Founder</strong> <em class="serif">at</em> Harvesting Change</span><span class="desc">Built an ecological-economic tradeoff model for kelp carbon removal. Mobilized 500+ participants, raised $10K+, and earned 10+ media features, including CBS.</span></li>
+      </ol>
+      <div class="kit">
+        <div><h4>coursework</h4>MATSCI 303 Batteries (Yi Cui) · CEE 173S Electricity Economics · CS 106A</div>
+        <div><h4>tools</h4>Python · WaterTAP · Origin · Excel modeling · data analysis</div>
+        <div><h4>languages</h4>English · Mandarin</div>
+      </div>
+    </section>
   </main>
 
   <section class="band" id="contact">
     <svg class="torn" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0,40.0 L9,36.7 L14,36.8 L18,36.6 L18,45.6 L28,42.6 L33,42.5 L46,42.4 L58,38.2 L70,34.9 L81,35.4 L95,32.1 L102,29.0 L114,30.4 L125,32.9 L142,31.9 L148,34.3 L157,34.2 L167,35.1 L178,32.3 L195,31.8 L200,32.5 L216,31.3 L227,33.9 L232,32.1 L237,34.1 L249,35.5 L263,38.5 L280,37.0 L291,34.5 L305,33.6 L316,31.0 L324,28.3 L336,30.4 L349,29.8 L355,27.3 L359,30.5 L367,27.9 L379,27.0 L395,31.1 L410,31.0 L427,32.7 L437,32.0 L446,29.6 L456,26.9 L462,28.0 L479,29.4 L486,28.7 L503,30.0 L509,30.2 L520,29.0 L534,31.3 L548,31.7 L565,30.8 L582,33.1 L595,29.9 L606,33.5 L613,33.9 L626,34.8 L641,32.3 L651,34.8 L661,36.6 L676,36.2 L689,34.8 L703,33.5 L708,30.4 L717,30.5 L729,26.8 L738,28.5 L744,28.1 L751,31.7 L764,28.5 L778,28.7 L783,26.4 L787,27.7 L801,29.1 L811,33.0 L823,29.3 L837,26.5 L843,30.9 L859,27.4 L870,30.1 L882,33.0 L896,36.3 L912,36.3 L928,33.1 L939,36.2 L952,38.2 L958,38.8 L962,39.9 L973,41.6 L978,38.6 L978,29.6 L989,30.4 L1006,30.2 L1017,30.6 L1027,31.2 L1044,33.0 L1062,31.1 L1079,34.1 L1085,33.6 L1092,30.2 L1107,33.7 L1121,35.0 L1137,38.7 L1155,37.5 L1172,39.9 L1183,39.5 L1189,37.6 L1194,37.8 L1198,36.1 L1209,32.5 L1224,36.4 L1232,32.5 L1239,29.7 L1256,32.5 L1262,36.0 L1276,32.6 L1290,32.1 L1307,33.3 L1312,36.2 L1328,35.7 L1340,39.0 L1346,38.8 L1351,35.7 L1358,34.0 L1373,32.4 L1379,31.3 L1379,40.3 L1384,35.9 L1401,35.9 L1412,37.0 L1425,37.1 L1440,35.3 L1440,60 L0,60 Z"/><circle cx="331" cy="6.0" r="2.0"/><circle cx="1050" cy="4.2" r="2.2"/><circle cx="1414" cy="25.1" r="0.6"/><circle cx="901" cy="26.4" r="1.3"/><circle cx="80" cy="20.0" r="1.2"/><circle cx="729" cy="29.1" r="1.6"/><circle cx="997" cy="1.4" r="0.9"/><circle cx="387" cy="0.1" r="1.2"/><circle cx="474" cy="29.5" r="1.1"/><circle cx="50" cy="26.5" r="0.9"/><circle cx="263" cy="10.1" r="0.7"/><circle cx="402" cy="19.7" r="1.0"/><circle cx="1118" cy="2.7" r="1.9"/><circle cx="207" cy="17.6" r="1.2"/><circle cx="431" cy="18.9" r="0.7"/><circle cx="1379" cy="25.6" r="0.8"/><circle cx="1286" cy="23.5" r="1.6"/><circle cx="1101" cy="21.6" r="1.4"/><circle cx="409" cy="18.6" r="0.8"/><circle cx="1188" cy="21.5" r="1.4"/><circle cx="618" cy="21.0" r="1.4"/><circle cx="1310" cy="22.6" r="1.5"/><circle cx="1171" cy="0.5" r="1.7"/><circle cx="1149" cy="21.3" r="2.1"/><circle cx="926" cy="2.6" r="0.7"/><circle cx="917" cy="28.8" r="1.2"/><circle cx="650" cy="1.5" r="0.6"/><circle cx="765" cy="7.3" r="1.0"/><circle cx="658" cy="2.1" r="2.1"/><circle cx="1293" cy="2.8" r="1.4"/><circle cx="1074" cy="14.2" r="1.9"/><circle cx="1218" cy="7.0" r="1.8"/><circle cx="332" cy="19.5" r="1.3"/><circle cx="1218" cy="2.3" r="2.1"/><circle cx="414" cy="1.4" r="1.6"/><circle cx="286" cy="18.0" r="1.1"/><circle cx="938" cy="20.8" r="1.6"/><circle cx="192" cy="14.5" r="1.4"/><circle cx="1400" cy="3.0" r="0.9"/><circle cx="705" cy="21.3" r="1.1"/><circle cx="671" cy="23.0" r="2.2"/><circle cx="791" cy="9.4" r="0.7"/><circle cx="681" cy="8.7" r="0.7"/><circle cx="730" cy="29.8" r="2.2"/><circle cx="557" cy="27.5" r="2.1"/><circle cx="107" cy="2.7" r="1.8"/><circle cx="377" cy="10.8" r="1.6"/><circle cx="910" cy="8.4" r="0.8"/><circle cx="526" cy="14.9" r="2.0"/><circle cx="567" cy="4.8" r="2.1"/><circle cx="981" cy="12.2" r="1.8"/><circle cx="599" cy="11.3" r="0.8"/><circle cx="477" cy="9.7" r="1.1"/><circle cx="573" cy="28.2" r="0.9"/><circle cx="17" cy="22.2" r="1.0"/><circle cx="94" cy="11.7" r="2.0"/><circle cx="110" cy="27.8" r="1.8"/><circle cx="1230" cy="8.4" r="0.7"/><circle cx="953" cy="19.0" r="0.8"/><circle cx="1398" cy="13.1" r="1.1"/><circle cx="1113" cy="23.6" r="1.3"/><circle cx="42" cy="22.8" r="1.2"/><circle cx="1261" cy="16.6" r="0.9"/><circle cx="116" cy="28.0" r="1.3"/><circle cx="885" cy="4.2" r="2.0"/><circle cx="699" cy="27.4" r="1.5"/><circle cx="246" cy="12.4" r="1.1"/><circle cx="368" cy="22.2" r="1.6"/><circle cx="585" cy="7.2" r="1.4"/><circle cx="963" cy="3.6" r="1.6"/><circle cx="108" cy="15.0" r="1.9"/><circle cx="793" cy="13.6" r="1.1"/><circle cx="1093" cy="12.8" r="1.5"/><circle cx="351" cy="5.2" r="1.5"/><circle cx="460" cy="11.0" r="1.9"/><circle cx="291" cy="0.6" r="2.0"/><circle cx="551" cy="22.4" r="0.9"/><circle cx="389" cy="22.6" r="1.4"/><circle cx="827" cy="10.8" r="1.7"/><circle cx="762" cy="23.7" r="2.0"/><circle cx="133" cy="26.9" r="1.2"/><circle cx="930" cy="13.0" r="1.1"/><circle cx="1173" cy="29.0" r="0.8"/><circle cx="612" cy="22.9" r="1.9"/><circle cx="1394" cy="14.7" r="0.7"/><circle cx="1340" cy="27.8" r="1.4"/><circle cx="674" cy="13.5" r="1.9"/><circle cx="322" cy="4.6" r="2.2"/><circle cx="157" cy="24.8" r="1.7"/><circle cx="1219" cy="26.8" r="0.7"/><circle cx="1119" cy="0.0" r="0.8"/><circle cx="820" cy="1.1" r="1.7"/><circle cx="1386" cy="18.8" r="1.4"/><circle cx="630" cy="22.9" r="0.8"/><circle cx="433" cy="28.3" r="0.9"/><circle cx="376" cy="23.7" r="0.6"/><circle cx="774" cy="29.9" r="1.0"/><circle cx="456" cy="25.2" r="1.0"/><circle cx="758" cy="16.4" r="0.6"/><circle cx="593" cy="19.5" r="0.7"/><circle cx="280" cy="26.5" r="1.6"/><circle cx="117" cy="6.8" r="1.3"/><circle cx="533" cy="14.8" r="1.7"/><circle cx="1034" cy="10.9" r="1.2"/><circle cx="10" cy="8.8" r="2.0"/><circle cx="97" cy="14.9" r="0.9"/><circle cx="1103" cy="5.8" r="1.3"/><circle cx="382" cy="26.7" r="0.8"/><circle cx="898" cy="18.3" r="2.0"/><circle cx="698" cy="27.3" r="0.7"/><circle cx="857" cy="27.7" r="0.7"/><circle cx="34" cy="17.9" r="1.3"/><circle cx="1022" cy="5.5" r="1.3"/><circle cx="1025" cy="9.4" r="0.8"/><circle cx="114" cy="5.0" r="0.9"/><circle cx="940" cy="15.7" r="1.3"/><circle cx="449" cy="21.8" r="1.9"/><circle cx="1418" cy="13.3" r="0.8"/><circle cx="113" cy="2.4" r="1.3"/><circle cx="1275" cy="16.8" r="1.8"/><circle cx="547" cy="23.1" r="1.1"/><circle cx="1158" cy="2.6" r="1.7"/><circle cx="282" cy="16.2" r="1.3"/><circle cx="466" cy="22.1" r="1.4"/><circle cx="910" cy="7.4" r="1.6"/><circle cx="583" cy="11.3" r="1.3"/><circle cx="1157" cy="1.9" r="0.9"/><circle cx="91" cy="18.2" r="1.2"/><circle cx="482" cy="28.6" r="0.7"/><circle cx="1075" cy="20.7" r="2.1"/><circle cx="428" cy="21.6" r="1.6"/><circle cx="1160" cy="28.4" r="0.7"/><circle cx="1189" cy="3.2" r="1.7"/><circle cx="671" cy="23.3" r="1.9"/><circle cx="1316" cy="24.4" r="0.8"/><circle cx="715" cy="0.3" r="2.1"/><circle cx="437" cy="20.8" r="0.8"/><circle cx="340" cy="25.8" r="1.3"/><circle cx="1129" cy="17.9" r="1.4"/><circle cx="564" cy="4.8" r="1.3"/></svg>
     <div class="wrap">
-      <span class="eyebrow mono">03 / contact</span>
-      <p class="say">Working on chips, cooling, or the policy around them? I'd love to hear about it.</p>
+      <span class="eyebrow mono">05 / contact</span>
+      <p class="say">Working on batteries, chips, cooling, or the policy around them? I'd love to hear about it.</p>
       <a class="big" href="mailto:alainaz@stanford.edu">say hi <span>→</span></a>
       <div class="links mono">
         <a href="mailto:alainaz@stanford.edu">alainaz@stanford.edu</a>
         <a href="https://www.linkedin.com/in/alainazhang/" target="_blank" rel="noreferrer">linkedin</a>
         <a href="https://github.com/alainaazhang" target="_blank" rel="noreferrer">github</a>
       </div>
+      <footer class="mono"><span>© 2026 Alaina Zhang</span><span>Stanford, CA</span></footer>
     </div>
   </section>
 
-  <footer class="end mono">
-    <div class="clock" aria-hidden="true"><span class="js-date"></span><span class="js-time"></span></div>
-    <div class="scene" aria-hidden="true"><div class="obj"><i class="f top" style="width:110px;height:110px;transform:translate(-50%,-50%) translateY(-74.0px) rotateX(90deg)"></i><i class="f bot" style="width:110px;height:110px;transform:translate(-50%,-50%) translateY(-58.0px) rotateX(-90deg)"></i><i class="f fr" style="width:110px;height:16px;transform:translate(-50%,-50%) translateY(-66px) translateZ(55.0px)"></i><i class="f bk" style="width:110px;height:16px;transform:translate(-50%,-50%) translateY(-66px) rotateY(180deg) translateZ(55.0px)"></i><i class="f lf" style="width:110px;height:16px;transform:translate(-50%,-50%) translateY(-66px) rotateY(-90deg) translateZ(55.0px)"></i><i class="f rt" style="width:110px;height:16px;transform:translate(-50%,-50%) translateY(-66px) rotateY(90deg) translateZ(55.0px)"></i><i class="f top" style="width:110px;height:110px;transform:translate(-50%,-50%) translateY(-41.0px) rotateX(90deg)"></i><i class="f bot" style="width:110px;height:110px;transform:translate(-50%,-50%) translateY(-25.0px) rotateX(-90deg)"></i><i class="f fr" style="width:110px;height:16px;transform:translate(-50%,-50%) translateY(-33px) translateZ(55.0px)"></i><i class="f bk" style="width:110px;height:16px;transform:translate(-50%,-50%) translateY(-33px) rotateY(180deg) translateZ(55.0px)"></i><i class="f lf" style="width:110px;height:16px;transform:translate(-50%,-50%) translateY(-33px) rotateY(-90deg) translateZ(55.0px)"></i><i class="f rt" style="width:110px;height:16px;transform:translate(-50%,-50%) translateY(-33px) rotateY(90deg) translateZ(55.0px)"></i><i class="f top" style="width:110px;height:110px;transform:translate(-50%,-50%) translateY(-8.0px) rotateX(90deg)"></i><i class="f bot" style="width:110px;height:110px;transform:translate(-50%,-50%) translateY(8.0px) rotateX(-90deg)"></i><i class="f fr" style="width:110px;height:16px;transform:translate(-50%,-50%) translateY(0px) translateZ(55.0px)"></i><i class="f bk" style="width:110px;height:16px;transform:translate(-50%,-50%) translateY(0px) rotateY(180deg) translateZ(55.0px)"></i><i class="f lf" style="width:110px;height:16px;transform:translate(-50%,-50%) translateY(0px) rotateY(-90deg) translateZ(55.0px)"></i><i class="f rt" style="width:110px;height:16px;transform:translate(-50%,-50%) translateY(0px) rotateY(90deg) translateZ(55.0px)"></i><i class="f top" style="width:110px;height:110px;transform:translate(-50%,-50%) translateY(25.0px) rotateX(90deg)"></i><i class="f bot" style="width:110px;height:110px;transform:translate(-50%,-50%) translateY(41.0px) rotateX(-90deg)"></i><i class="f fr" style="width:110px;height:16px;transform:translate(-50%,-50%) translateY(33px) translateZ(55.0px)"></i><i class="f bk" style="width:110px;height:16px;transform:translate(-50%,-50%) translateY(33px) rotateY(180deg) translateZ(55.0px)"></i><i class="f lf" style="width:110px;height:16px;transform:translate(-50%,-50%) translateY(33px) rotateY(-90deg) translateZ(55.0px)"></i><i class="f rt" style="width:110px;height:16px;transform:translate(-50%,-50%) translateY(33px) rotateY(90deg) translateZ(55.0px)"></i><i class="f top" style="width:170px;height:170px;transform:translate(-50%,-50%) translateY(57.0px) rotateX(90deg)"></i><i class="f bot" style="width:170px;height:170px;transform:translate(-50%,-50%) translateY(71.0px) rotateX(-90deg)"></i><i class="f fr" style="width:170px;height:14px;transform:translate(-50%,-50%) translateY(64px) translateZ(85.0px)"></i><i class="f bk" style="width:170px;height:14px;transform:translate(-50%,-50%) translateY(64px) rotateY(180deg) translateZ(85.0px)"></i><i class="f lf" style="width:170px;height:14px;transform:translate(-50%,-50%) translateY(64px) rotateY(-90deg) translateZ(85.0px)"></i><i class="f rt" style="width:170px;height:14px;transform:translate(-50%,-50%) translateY(64px) rotateY(90deg) translateZ(85.0px)"></i></div></div>
-    <div class="name">alaina zhang</div>
-    <a class="info" href="#about">info</a>
-    <small>© 2026 · stanford, ca</small>
-  </footer>
-
   <script>
-    // live Stanford-time clock
-    const fmtD = new Intl.DateTimeFormat("en-US", { timeZone: "America/Los_Angeles", month: "numeric", day: "numeric", year: "numeric" });
-    const fmtT = new Intl.DateTimeFormat("en-US", { timeZone: "America/Los_Angeles", hour: "2-digit", minute: "2-digit", second: "2-digit", hour12: false });
-    function tick() {
-      const now = new Date();
-      document.querySelectorAll(".js-date").forEach(el => el.textContent = fmtD.format(now));
-      document.querySelectorAll(".js-time").forEach(el => el.textContent = fmtT.format(now) + " PT");
-    }
-    tick(); setInterval(tick, 1000);
-
-    // "I'm curious about…" word cycler
-    const words = ["semiconductors", "advanced packaging", "power electronics", "chip fabrication", "data-center cooling",
-                   "thermal interfaces", "energy-efficient computing", "sustainable materials", "defense hardware", "science policy", "deep-tech startups"];
+    const words = ["zinc batteries", "desalination", "kelp ecosystems", "semiconductors", "advanced packaging", "power electronics",
+                   "data-center cooling", "electricity economics", "sustainable materials", "science policy", "deep-tech startups"];
     const wordEl = document.getElementById("word");
     let wi = 0, timer;
     function next() {
