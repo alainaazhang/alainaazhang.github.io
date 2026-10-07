@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alaina Zhang</title>
+  <meta name="description" content="Alaina Zhang — Materials Science & Engineering student at Stanford working on semiconductors, data-center efficiency, and deep tech.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700;9..144,800&family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+:root {
+  --bg: #faf8f4;
+  --card: #ffffff;
+  --ink: #141414;
+  --muted: #6b6b6b;
+  --line: #e7e3dc;
+  --cardinal: #8c1515;
+  --accent: #2f6fd6;
+  --green: #3fb860;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+.serif { font-family: "Fraunces", Georgia, serif; }
+.mono { font-family: "Space Mono", ui-monospace, monospace; }
+
+a { color: inherit; }
+
+/* Nav */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 24px;
+  background: rgba(250, 248, 244, 0.9);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+.brand { font-size: 1.1rem; text-decoration: none; }
+.nav nav { display: flex; gap: 24px; font-size: 0.85rem; }
+.nav nav a { text-decoration: none; }
+.nav nav a:hover { text-decoration: underline; }
+
+main { max-width: 1100px; margin: 0 auto; padding: 32px 16px 64px; }
+
+/* Banner */
+.banner {
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+  padding: 120px 32px 90px;
+  color: #fff;
+  background:
+    radial-gradient(circle at 75% 20%, rgba(120, 200, 255, 0.55), transparent 45%),
+    radial-gradient(circle at 20% 90%, rgba(255, 140, 60, 0.45), transparent 50%),
+    linear-gradient(135deg, #0d1b3d 0%, #1e3a8a 50%, #3b1d6e 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%);
+}
+.banner-inner { position: relative; z-index: 1; }
+.banner h1 { font-size: clamp(2.4rem, 8vw, 4rem); line-height: 1.05; font-weight: 800; }
+.banner h2 { margin-top: 14px; font-size: clamp(0.85rem, 2.4vw, 1.15rem); font-weight: 400; }
+.dot { margin: 0 6px; }
+
+/* Wafer-like grid pattern */
+.grid-overlay {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px);
+  background-size: 28px 28px;
+  mask-image: linear-gradient(to left, #000 10%, transparent 75%);
+  -webkit-mask-image: linear-gradient(to left, #000 10%, transparent 75%);
+}
+
+/* Intro card */
+.card {
+  position: relative;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 48px 32px 36px;
+  margin-top: -20px;
+}
+.intro h3 { font-size: 2.2rem; margin-bottom: 10px; }
+.lead { max-width: 640px; margin-bottom: 24px; }
+.cardinal { color: var(--cardinal); font-weight: 600; }
+
+/* Avatar with rotating text ring */
+.avatar {
+  position: absolute;
+  top: -120px;
+  right: 40px;
+  width: 220px;
+  height: 220px;
+}
+.ring {
+  position: absolute;
+  inset: 0;
+  animation: spin 24s linear infinite;
+}
+.ring text {
+  font-family: "Space Mono", monospace;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  fill: var(--ink);
+}
+.photo, .avatar img {
+  position: absolute;
+  inset: 22px;
+  border-radius: 50%;
+  border: 5px solid #fff;
+  object-fit: cover;
+  width: calc(100% - 44px);
+  height: calc(100% - 44px);
+}
+.photo {
+  display: grid;
+  place-items: center;
+  font-size: 3.4rem;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(135deg, #8c1515, #3b1d6e);
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .ring { animation: none; } }
+
+/* Timeline */
+.timeline { list-style: none; border-left: 2px solid var(--line); margin: 0 0 28px 6px; }
+.timeline li { position: relative; padding: 0 0 14px 20px; display: flex; flex-direction: column; }
+.timeline li::before {
+  content: "";
+  position: absolute;
+  left: -7px;
+  top: 6px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #cfcac2;
+}
+.timeline li.now::before { background: var(--green); }
+.label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); }
+.timeline li.now .label { color: var(--green); }
+
+/* Highlights */
+.highlights { list-style: none; margin: 10px 0 28px; }
+.highlights li { display: flex; gap: 10px; padding: 5px 0; }
+.emoji { width: 1.5em; flex-shrink: 0; }
+
+.links { display: flex; flex-wrap: wrap; gap: 12px 24px; font-size: 0.88rem; }
+.links a { text-decoration: none; border-bottom: 1px solid var(--line); }
+.links a:hover { border-color: var(--ink); }
+
+/* Sections */
+.section { margin-top: 64px; }
+.section h3 { font-size: 2rem; }
+.sub { color: var(--muted); margin-bottom: 20px; }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
+}
+.tile {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 20px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.tile:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.06); }
+.tag { font-size: 0.7rem; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; }
+.tile h4 { font-size: 1.2rem; margin: 6px 0; line-height: 1.25; }
+.tile p { color: var(--muted); font-size: 0.93rem; }
+
+footer { text-align: center; color: var(--muted); font-size: 0.8rem; padding: 32px 0 48px; }
+
+/* Mobile */
+@media (max-width: 720px) {
+  .banner { padding: 80px 20px 110px; }
+  .card { padding: 120px 20px 28px; }
+  .avatar { width: 170px; height: 170px; top: -95px; right: 50%; transform: translateX(50%); }
+  .photo { font-size: 2.6rem; }
+  .ring text { font-size: 15px; }
+}
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <a class="brand serif" href="#">alaina zhang</a>
+    <nav class="mono">
+      <a href="#interests">interests</a>
+      <a href="#work">work</a>
+      <a href="#contact">contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="banner">
+      <div class="banner-inner">
+        <h1 class="serif">Alaina Zhang</h1>
+        <h2 class="mono">materials science &amp; engineering <span class="dot">•</span> student @ stanford</h2>
+      </div>
+      <div class="grid-overlay" aria-hidden="true"></div>
+    </section>
+
+    <section class="card intro">
+      <div class="avatar">
+        <svg class="ring" viewBox="0 0 200 200" aria-hidden="true">
+          <defs>
+            <path id="circle" d="M100,100 m-88,0 a88,88 0 1,1 176,0 a88,88 0 1,1 -176,0"/>
+          </defs>
+          <text><textPath href="#circle" textLength="550" lengthAdjust="spacing">ALAINA ZHANG · ALAINA ZHANG · ALAINA ZHANG · </textPath></text>
+        </svg>
+        <img src="photo.jpg" alt="Alaina Zhang">
+      </div>
+
+      <h3 class="serif">Hey there!</h3>
+      <p class="lead">
+        I'm <strong class="serif">Alaina</strong>, a <span class="cardinal">Stanford</span> Materials Science
+        and Engineering student interested in <strong>defense technology, hardware, and deep tech</strong>.
+        I like work that connects technical research with commercialization and policy.
+      </p>
+
+      <ol class="timeline">
+        <li class="now">
+          <span class="label mono">Now</span>
+          <span>Materials Science &amp; Engineering @ Stanford</span>
+        </li>
+        <li>
+          <span class="label mono">Previously</span>
+          <span>Battery research · Water-system management · Science-policy advocacy · TreeHacks · ASES</span>
+        </li>
+      </ol>
+
+      <p>A few things I've worked on:</p>
+      <ul class="highlights">
+        <li><span class="emoji">🔋</span> Did <strong>battery research</strong> on the materials behind energy storage.</li>
+        <li><span class="emoji">💧</span> Worked on <strong>water-system management</strong>.</li>
+        <li><span class="emoji">🏛️</span> Did <strong>science-policy advocacy</strong>, including work related to <strong>H.R. 2950</strong>.</li>
+        <li><span class="emoji">💻</span> Worked with technology companies through <strong>TreeHacks</strong>, Stanford's flagship hackathon.</li>
+        <li><span class="emoji">📈</span> Worked with venture firms through <strong>ASES</strong>.</li>
+      </ul>
+
+      <div class="links mono" id="contact">
+        <a href="mailto:alainaz@stanford.edu">✉ alainaz@stanford.edu</a>
+        <a href="https://github.com/alainaazhang" target="_blank" rel="noreferrer">⌥ github</a>
+        <a href="https://www.linkedin.com/in/alainazhang/" target="_blank" rel="noreferrer">in linkedin</a>
+      </div>
+    </section>
+
+    <section class="section" id="interests">
+      <h3 class="serif">Interests</h3>
+      <p class="sub">What I'm most excited to work on.</p>
+      <div class="grid">
+        <article class="tile">
+          <span class="tag mono">semiconductors</span>
+          <h4 class="serif">Chip Materials &amp; Fabrication</h4>
+          <p>The materials and process steps that set what chips can do.</p>
+        </article>
+        <article class="tile">
+          <span class="tag mono">semiconductors</span>
+          <h4 class="serif">Advanced Packaging</h4>
+          <p>Chiplets, interconnects, and getting more out of the package.</p>
+        </article>
+        <article class="tile">
+          <span class="tag mono">semiconductors</span>
+          <h4 class="serif">Power Electronics</h4>
+          <p>Wide-bandgap devices and converting power efficiently.</p>
+        </article>
+        <article class="tile">
+          <span class="tag mono">data centers</span>
+          <h4 class="serif">Energy-Efficient Computing</h4>
+          <p>Cutting the energy cost of every computation.</p>
+        </article>
+        <article class="tile">
+          <span class="tag mono">data centers</span>
+          <h4 class="serif">Thermal Management &amp; Cooling</h4>
+          <p>Moving heat out of dense hardware.</p>
+        </article>
+        <article class="tile">
+          <span class="tag mono">data centers</span>
+          <h4 class="serif">Sustainable Materials</h4>
+          <p>Lower-impact materials for computing infrastructure.</p>
+        </article>
+        <article class="tile">
+          <span class="tag mono">deep tech</span>
+          <h4 class="serif">Defense Technology &amp; Hardware</h4>
+          <p>Hard-tech systems where the materials make the difference.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="work">
+      <h3 class="serif">Experience</h3>
+      <p class="sub">Research, policy, and work with startups.</p>
+      <div class="grid">
+        <article class="tile">
+          <span class="tag mono">research</span>
+          <h4 class="serif">Battery Research</h4>
+          <p>Materials research for energy storage.</p>
+        </article>
+        <article class="tile">
+          <span class="tag mono">systems</span>
+          <h4 class="serif">Water-System Management</h4>
+          <p>Managing and improving water infrastructure.</p>
+        </article>
+        <article class="tile">
+          <span class="tag mono">policy</span>
+          <h4 class="serif">Science-Policy Advocacy</h4>
+          <p>Advocacy work, including on H.R. 2950.</p>
+        </article>
+        <article class="tile">
+          <span class="tag mono">stanford</span>
+          <h4 class="serif">TreeHacks</h4>
+          <p>Working with technology companies at Stanford's hackathon.</p>
+        </article>
+        <article class="tile">
+          <span class="tag mono">stanford</span>
+          <h4 class="serif">ASES</h4>
+          <p>Working with venture firms on the startup side of deep tech.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="mono">© 2026 Alaina Zhang</footer>
+</body>
+</html>
