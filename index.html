@@ -3,341 +3,274 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Alaina Zhang</title>
-  <meta name="description" content="Alaina Zhang — Materials Science & Engineering student at Stanford working on semiconductors, data-center efficiency, and deep tech.">
+  <title>alaina zhang</title>
+  <meta name="description" content="Alaina Zhang: Materials Science & Engineering at Stanford. Semiconductors, advanced packaging, power electronics, and more efficient data centers.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700;9..144,800&family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;700;800&family=Fraunces:ital,opsz,wght@0,9..144,500;1,9..144,400;1,9..144,600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
   <style>
-:root {
-  --bg: #faf8f4;
-  --card: #ffffff;
-  --ink: #141414;
-  --muted: #6b6b6b;
-  --line: #e7e3dc;
-  --cardinal: #8c1515;
-  --accent: #2f6fd6;
-  --green: #3fb860;
-}
+    :root {
+      --paper: #fbfaf7;
+      --ink: #17161a;
+      --soft: #6d6a72;
+      --hair: #e4e0d8;
+      --heat: #e8590c;
+      --cardinal: #8c1515;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background-color: var(--paper);
+      background-image: radial-gradient(#d9d4ca 1px, transparent 1px);
+      background-size: 22px 22px;
+      color: var(--ink);
+      font-family: "Inter Tight", system-ui, sans-serif;
+      font-size: 17px;
+      line-height: 1.6;
+    }
+    .mono { font-family: "JetBrains Mono", ui-monospace, monospace; }
+    .serif { font-family: "Fraunces", Georgia, serif; }
+    a { color: inherit; }
+    ::selection { background: var(--heat); color: #fff; }
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
+    /* nav */
+    .nav { position: sticky; top: 0; z-index: 10; display: flex; justify-content: space-between; align-items: center;
+      padding: 14px clamp(16px, 4vw, 40px); background: rgba(251, 250, 247, .85); backdrop-filter: blur(8px); }
+    .brand { font-weight: 800; text-decoration: none; letter-spacing: -.02em; }
+    .nav nav { display: flex; gap: clamp(14px, 3vw, 28px); font-size: .8rem; }
+    .nav nav a { text-decoration: none; }
+    .nav nav a::before { content: "/"; color: var(--heat); margin-right: 3px; }
+    .nav nav a:hover { text-decoration: underline; text-underline-offset: 4px; }
 
-html { scroll-behavior: smooth; }
+    .wrap { max-width: 1180px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 40px); }
 
-body {
-  background: var(--bg);
-  color: var(--ink);
-  font-family: "Inter", system-ui, sans-serif;
-  font-size: 17px;
-  line-height: 1.6;
-}
+    /* hero */
+    .hero { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); align-items: center; gap: 24px;
+      min-height: calc(100vh - 60px); padding: 40px 0 60px; }
+    .hero h1 { font-size: clamp(3rem, 8vw, 5.6rem); font-weight: 800; letter-spacing: -.045em; line-height: .92; }
+    .hero h1 em { font-family: "Fraunces", serif; font-weight: 400; letter-spacing: -.02em; }
+    .role { margin-top: 18px; font-weight: 700; font-size: 1rem; }
+    .role span { color: var(--soft); font-weight: 500; }
+    .icons { display: flex; gap: 14px; margin-top: 18px; }
+    .icons a { width: 22px; height: 22px; display: block; transition: color .15s, transform .15s; }
+    .icons a:hover { color: var(--heat); transform: translateY(-2px); }
+    .icons svg { width: 100%; height: 100%; }
+    .fig { font-size: .72rem; color: var(--soft); margin-top: 6px; text-align: right; }
 
-.serif { font-family: "Fraunces", Georgia, serif; }
-.mono { font-family: "Space Mono", ui-monospace, monospace; }
+    .xsec { width: 100%; height: auto; overflow: visible; }
+    .xsec .ln { fill: none; stroke: var(--ink); stroke-width: 1.2; stroke-dasharray: 1; stroke-dashoffset: 1;
+      animation: draw .9s ease-out forwards; animation-delay: var(--d); }
+    .xsec .dash { stroke-dasharray: 1; }
+    .xsec rect.ln { fill: rgba(255,255,255,.7); }
+    .xsec .heat { fill: none; stroke: var(--heat); stroke-width: 2.4; stroke-linecap: round;
+      stroke-dasharray: .14 .86; stroke-dashoffset: 1; opacity: 0;
+      animation: rise 2.6s linear infinite; animation-delay: calc(4.2s + var(--h)); }
+    .xsec text { font-family: "JetBrains Mono", monospace; font-size: 15px; fill: var(--soft); opacity: 0;
+      animation: fade .6s ease forwards 3.8s; }
+    .xsec .die-label { font-size: 13px; fill: var(--ink); font-weight: 600; animation-delay: 2.6s; }
+    .xsec .lead { stroke: var(--soft); stroke-width: .6; stroke-dasharray: 2 3; opacity: 0; animation: fade .6s ease forwards 3.8s; }
+    @keyframes draw { to { stroke-dashoffset: 0; } }
+    @keyframes fade { to { opacity: 1; } }
+    @keyframes rise { 0% { stroke-dashoffset: 1; opacity: 0; } 10% { opacity: 1; } 85% { opacity: 1; } 100% { stroke-dashoffset: 0; opacity: 0; } }
 
-a { color: inherit; }
+    /* sections */
+    section.block { padding: 72px 0; border-top: 1px solid var(--hair); }
+    .eyebrow { font-size: .75rem; color: var(--heat); text-transform: uppercase; letter-spacing: .14em; }
+    h2 { font-family: "Fraunces", serif; font-weight: 500; font-size: clamp(2rem, 4.5vw, 2.9rem); letter-spacing: -.02em; line-height: 1.1; margin: 6px 0 10px; }
+    h2 em { font-style: italic; font-weight: 400; }
+    .sub { color: var(--soft); max-width: 560px; }
 
-/* Nav */
-.nav {
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 14px 24px;
-  background: rgba(250, 248, 244, 0.9);
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid var(--line);
-}
-.brand { font-size: 1.1rem; text-decoration: none; }
-.nav nav { display: flex; gap: 24px; font-size: 0.85rem; }
-.nav nav a { text-decoration: none; }
-.nav nav a:hover { text-decoration: underline; }
+    /* about */
+    .about { display: grid; grid-template-columns: 260px minmax(0, 1fr); gap: clamp(28px, 5vw, 64px); align-items: start; }
+    .avatar { position: relative; width: 240px; height: 240px; }
+    .ring { position: absolute; inset: 0; animation: spin 26s linear infinite; }
+    .ring text { font-family: "JetBrains Mono", monospace; font-size: 12.5px; font-weight: 600; letter-spacing: 2px; fill: var(--ink); }
+    .avatar img { position: absolute; inset: 24px; width: calc(100% - 48px); height: calc(100% - 48px);
+      border-radius: 50%; object-fit: cover; border: 4px solid #fff; box-shadow: 0 0 0 1px var(--hair); }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .about p { max-width: 620px; margin-bottom: 18px; }
+    .cardinal { color: var(--cardinal); font-weight: 700; }
+    .timeline { list-style: none; border-left: 2px solid var(--hair); margin: 26px 0 0 6px; }
+    .timeline li { position: relative; padding: 0 0 16px 22px; }
+    .timeline li::before { content: ""; position: absolute; left: -7px; top: 7px; width: 12px; height: 12px; border-radius: 50%; background: #cfcac2; }
+    .timeline li.now::before { background: var(--heat); box-shadow: 0 0 0 4px rgba(232, 89, 12, .18); }
+    .timeline .label { display: block; font-size: .7rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--soft); }
+    .timeline li.now .label { color: var(--heat); }
 
-main { max-width: 1100px; margin: 0 auto; padding: 32px 16px 64px; }
+    /* periodic tiles */
+    .tiles { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 14px; margin-top: 32px; }
+    .tile { background: #fff; border: 1px solid var(--ink); padding: 18px; transition: transform .15s, box-shadow .15s; }
+    .tile:hover { transform: translate(-3px, -3px); box-shadow: 4px 4px 0 var(--heat); }
+    .el { display: grid; grid-template-columns: 1fr; width: 92px; height: 92px; border: 1px solid var(--ink);
+      padding: 6px 8px; margin-bottom: 16px; position: relative; }
+    .el .z { font-size: .7rem; color: var(--soft); }
+    .el .sym { font-family: "Fraunces", serif; font-size: 1.9rem; font-weight: 500; line-height: 1; letter-spacing: -.02em; }
+    .el .nm { font-size: .55rem; color: var(--soft); align-self: end; line-height: 1.2; }
+    .tile h4 { font-weight: 700; font-size: 1.1rem; letter-spacing: -.01em; line-height: 1.25; }
+    .tile p { color: var(--soft); font-size: .93rem; margin-top: 4px; }
 
-/* Banner */
-.banner {
-  position: relative;
-  overflow: hidden;
-  border-radius: 18px;
-  padding: 120px 32px 90px;
-  color: #fff;
-  background:
-    radial-gradient(circle at 75% 20%, rgba(120, 200, 255, 0.55), transparent 45%),
-    radial-gradient(circle at 20% 90%, rgba(255, 140, 60, 0.45), transparent 50%),
-    linear-gradient(135deg, #0d1b3d 0%, #1e3a8a 50%, #3b1d6e 100%);
-  clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%);
-}
-.banner-inner { position: relative; z-index: 1; }
-.banner h1 { font-size: clamp(2.4rem, 8vw, 4rem); line-height: 1.05; font-weight: 800; }
-.banner h2 { margin-top: 14px; font-size: clamp(0.85rem, 2.4vw, 1.15rem); font-weight: 400; }
-.dot { margin: 0 6px; }
+    /* log */
+    .log { list-style: none; margin-top: 28px; border-top: 1px solid var(--ink); }
+    .log li { display: grid; grid-template-columns: 48px 150px minmax(0, 1fr) minmax(0, 1.4fr); gap: 16px; align-items: baseline;
+      padding: 18px 4px; border-bottom: 1px solid var(--hair); transition: background .15s; }
+    .log li:hover { background: #fff; }
+    .log .idx { color: var(--heat); font-size: .8rem; }
+    .log .tag { font-size: .72rem; color: var(--soft); text-transform: uppercase; letter-spacing: .1em; }
+    .log .what { font-weight: 700; font-size: 1.15rem; letter-spacing: -.01em; }
+    .log .desc { color: var(--soft); }
 
-/* Wafer-like grid pattern */
-.grid-overlay {
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px);
-  background-size: 28px 28px;
-  mask-image: linear-gradient(to left, #000 10%, transparent 75%);
-  -webkit-mask-image: linear-gradient(to left, #000 10%, transparent 75%);
-}
+    /* contact */
+    .contact { text-align: left; }
+    .big { display: inline-block; font-weight: 800; font-size: clamp(2.2rem, 7vw, 4.4rem); letter-spacing: -.04em; line-height: 1; text-decoration: none; margin-top: 10px; }
+    .big span { color: var(--heat); display: inline-block; transition: transform .2s; }
+    .big:hover span { transform: translateX(10px); }
+    .contact .links { display: flex; flex-wrap: wrap; gap: 10px 26px; margin-top: 22px; font-size: .85rem; }
+    .contact .links a { text-decoration: none; border-bottom: 1px solid var(--hair); }
+    .contact .links a:hover { border-color: var(--heat); }
+    footer { font-size: .75rem; color: var(--soft); padding: 28px 0 40px; border-top: 1px solid var(--hair); display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
 
-/* Intro card */
-.card {
-  position: relative;
-  background: var(--card);
-  border: 1px solid var(--line);
-  border-radius: 18px;
-  padding: 48px 32px 36px;
-  margin-top: -20px;
-}
-.intro h3 { font-size: 2.2rem; margin-bottom: 10px; }
-.lead { max-width: 640px; margin-bottom: 24px; }
-.cardinal { color: var(--cardinal); font-weight: 600; }
-
-/* Avatar with rotating text ring */
-.avatar {
-  position: absolute;
-  top: -120px;
-  right: 40px;
-  width: 220px;
-  height: 220px;
-}
-.ring {
-  position: absolute;
-  inset: 0;
-  animation: spin 24s linear infinite;
-}
-.ring text {
-  font-family: "Space Mono", monospace;
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  fill: var(--ink);
-}
-.photo, .avatar img {
-  position: absolute;
-  inset: 22px;
-  border-radius: 50%;
-  border: 5px solid #fff;
-  object-fit: cover;
-  width: calc(100% - 44px);
-  height: calc(100% - 44px);
-}
-.photo {
-  display: grid;
-  place-items: center;
-  font-size: 3.4rem;
-  font-weight: 700;
-  color: #fff;
-  background: linear-gradient(135deg, #8c1515, #3b1d6e);
-}
-@keyframes spin { to { transform: rotate(360deg); } }
-@media (prefers-reduced-motion: reduce) { .ring { animation: none; } }
-
-/* Timeline */
-.timeline { list-style: none; border-left: 2px solid var(--line); margin: 0 0 28px 6px; }
-.timeline li { position: relative; padding: 0 0 14px 20px; display: flex; flex-direction: column; }
-.timeline li::before {
-  content: "";
-  position: absolute;
-  left: -7px;
-  top: 6px;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: #cfcac2;
-}
-.timeline li.now::before { background: var(--green); }
-.label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); }
-.timeline li.now .label { color: var(--green); }
-
-/* Highlights */
-.highlights { list-style: none; margin: 10px 0 28px; }
-.highlights li { display: flex; gap: 10px; padding: 5px 0; }
-.emoji { width: 1.5em; flex-shrink: 0; }
-
-.links { display: flex; flex-wrap: wrap; gap: 12px 24px; font-size: 0.88rem; }
-.links a { text-decoration: none; border-bottom: 1px solid var(--line); }
-.links a:hover { border-color: var(--ink); }
-
-/* Sections */
-.section { margin-top: 64px; }
-.section h3 { font-size: 2rem; }
-.sub { color: var(--muted); margin-bottom: 20px; }
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: 16px;
-}
-.tile {
-  background: var(--card);
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  padding: 20px;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
-}
-.tile:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.06); }
-.tag { font-size: 0.7rem; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; }
-.tile h4 { font-size: 1.2rem; margin: 6px 0; line-height: 1.25; }
-.tile p { color: var(--muted); font-size: 0.93rem; }
-
-footer { text-align: center; color: var(--muted); font-size: 0.8rem; padding: 32px 0 48px; }
-
-/* Mobile */
-@media (max-width: 720px) {
-  .banner { padding: 80px 20px 110px; }
-  .card { padding: 120px 20px 28px; }
-  .avatar { width: 170px; height: 170px; top: -95px; right: 50%; transform: translateX(50%); }
-  .photo { font-size: 2.6rem; }
-  .ring text { font-size: 15px; }
-}
+    @media (max-width: 860px) {
+      .hero { grid-template-columns: 1fr; min-height: 0; padding-top: 24px; }
+      .about { grid-template-columns: 1fr; }
+      .avatar { width: 200px; height: 200px; }
+      .log li { grid-template-columns: 36px minmax(0, 1fr); gap: 2px 12px; }
+      .log .tag { grid-column: 2; grid-row: 1; }
+      .log .what, .log .desc { grid-column: 2; }
+      .log .idx { grid-row: 1 / span 3; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .xsec .ln { animation: none; stroke-dashoffset: 0; }
+      .xsec text, .xsec .lead { animation: none; opacity: 1; }
+      .xsec .heat { animation: none; opacity: .8; stroke-dasharray: none; }
+      .ring { animation: none; }
+    }
   </style>
 </head>
 <body>
   <header class="nav">
-    <a class="brand serif" href="#">alaina zhang</a>
+    <a class="brand" href="#">alaina zhang</a>
     <nav class="mono">
-      <a href="#interests">interests</a>
-      <a href="#work">work</a>
+      <a href="#about">about</a>
+      <a href="#stack">stack</a>
+      <a href="#log">log</a>
       <a href="#contact">contact</a>
     </nav>
   </header>
 
-  <main>
-    <section class="banner">
-      <div class="banner-inner">
-        <h1 class="serif">Alaina Zhang</h1>
-        <h2 class="mono">materials science &amp; engineering <span class="dot">•</span> student @ stanford</h2>
+  <main class="wrap">
+    <section class="hero">
+      <div>
+        <h1>alaina<br><em>zhang</em></h1>
+        <p class="role">materials science &amp; engineering @ stanford <span>/ semiconductors · data centers · deep tech</span></p>
+        <div class="icons">
+          <a href="https://github.com/alainaazhang" target="_blank" rel="noreferrer" aria-label="GitHub"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.56-.29-5.25-1.28-5.25-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.38-5.26 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z"/></svg></a>
+          <a href="https://www.linkedin.com/in/alainazhang/" target="_blank" rel="noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg></a>
+          <a href="mailto:alainaz@stanford.edu" aria-label="Email"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" d="M3 6h18v12H3z M3 6l9 7 9-7"/></svg></a>
+        </div>
       </div>
-      <div class="grid-overlay" aria-hidden="true"></div>
+      <figure>
+        <svg class="xsec" viewBox="-130 60 960 400" role="img" aria-label="Line drawing of an advanced chip package cross-section: heat sink, lid, HBM memory stacks and an SoC die on a silicon interposer, with heat rising through the fins.">
+  <g class="parts"><rect class="ln" pathLength="1" style="--d:0.03s" x="20" y="420" width="580" height="18" rx="2"/><circle class="ln" pathLength="1" style="--d:0.04s" cx="70" cy="410" r="6"/><circle class="ln" pathLength="1" style="--d:0.05s" cx="100" cy="410" r="6"/><circle class="ln" pathLength="1" style="--d:0.07s" cx="130" cy="410" r="6"/><circle class="ln" pathLength="1" style="--d:0.08s" cx="160" cy="410" r="6"/><circle class="ln" pathLength="1" style="--d:0.09s" cx="190" cy="410" r="6"/><circle class="ln" pathLength="1" style="--d:0.10s" cx="220" cy="410" r="6"/><circle class="ln" pathLength="1" style="--d:0.11s" cx="250" cy="410" r="6"/><circle class="ln" pathLength="1" style="--d:0.13s" cx="280" cy="410" r="6"/><circle class="ln" pathLength="1" style="--d:0.14s" cx="310" cy="410" r="6"/><circle class="ln" pathLength="1" style="--d:0.15s" cx="340" cy="410" r="6"/><circle class="ln" pathLength="1" style="--d:0.16s" cx="370" cy="410" r="6"/><circle class="ln" pathLength="1" style="--d:0.17s" cx="400" cy="410" r="6"/><circle class="ln" pathLength="1" style="--d:0.19s" cx="430" cy="410" r="6"/><circle class="ln" pathLength="1" style="--d:0.20s" cx="460" cy="410" r="6"/><circle class="ln" pathLength="1" style="--d:0.21s" cx="490" cy="410" r="6"/><circle class="ln" pathLength="1" style="--d:0.22s" cx="520" cy="410" r="6"/><circle class="ln" pathLength="1" style="--d:0.23s" cx="550" cy="410" r="6"/><rect class="ln" pathLength="1" style="--d:0.26s" x="50" y="370" width="520" height="32" rx="2"/><line class="ln" pathLength="1" style="--d:0.27s" x1="80" y1="374" x2="94" y2="398"/><line class="ln" pathLength="1" style="--d:0.28s" x1="120" y1="374" x2="134" y2="398"/><line class="ln" pathLength="1" style="--d:0.29s" x1="160" y1="374" x2="174" y2="398"/><line class="ln" pathLength="1" style="--d:0.30s" x1="200" y1="374" x2="214" y2="398"/><line class="ln" pathLength="1" style="--d:0.30s" x1="240" y1="374" x2="254" y2="398"/><line class="ln" pathLength="1" style="--d:0.31s" x1="280" y1="374" x2="294" y2="398"/><line class="ln" pathLength="1" style="--d:0.32s" x1="320" y1="374" x2="334" y2="398"/><line class="ln" pathLength="1" style="--d:0.33s" x1="360" y1="374" x2="374" y2="398"/><line class="ln" pathLength="1" style="--d:0.34s" x1="400" y1="374" x2="414" y2="398"/><line class="ln" pathLength="1" style="--d:0.34s" x1="440" y1="374" x2="454" y2="398"/><line class="ln" pathLength="1" style="--d:0.35s" x1="480" y1="374" x2="494" y2="398"/><line class="ln" pathLength="1" style="--d:0.36s" x1="520" y1="374" x2="534" y2="398"/><circle class="ln" pathLength="1" style="--d:0.37s" cx="110" cy="363" r="4"/><circle class="ln" pathLength="1" style="--d:0.38s" cx="135" cy="363" r="4"/><circle class="ln" pathLength="1" style="--d:0.39s" cx="160" cy="363" r="4"/><circle class="ln" pathLength="1" style="--d:0.40s" cx="185" cy="363" r="4"/><circle class="ln" pathLength="1" style="--d:0.41s" cx="210" cy="363" r="4"/><circle class="ln" pathLength="1" style="--d:0.42s" cx="235" cy="363" r="4"/><circle class="ln" pathLength="1" style="--d:0.43s" cx="260" cy="363" r="4"/><circle class="ln" pathLength="1" style="--d:0.44s" cx="285" cy="363" r="4"/><circle class="ln" pathLength="1" style="--d:0.45s" cx="310" cy="363" r="4"/><circle class="ln" pathLength="1" style="--d:0.46s" cx="335" cy="363" r="4"/><circle class="ln" pathLength="1" style="--d:0.47s" cx="360" cy="363" r="4"/><circle class="ln" pathLength="1" style="--d:0.48s" cx="385" cy="363" r="4"/><circle class="ln" pathLength="1" style="--d:0.49s" cx="410" cy="363" r="4"/><circle class="ln" pathLength="1" style="--d:0.50s" cx="435" cy="363" r="4"/><circle class="ln" pathLength="1" style="--d:0.51s" cx="460" cy="363" r="4"/><circle class="ln" pathLength="1" style="--d:0.52s" cx="485" cy="363" r="4"/><circle class="ln" pathLength="1" style="--d:0.53s" cx="510" cy="363" r="4"/><rect class="ln" pathLength="1" style="--d:0.56s" x="90" y="338" width="440" height="20"/><line class="ln" pathLength="1" style="--d:0.57s" x1="115" y1="338" x2="115" y2="358"/><line class="ln" pathLength="1" style="--d:0.58s" x1="140" y1="338" x2="140" y2="358"/><line class="ln" pathLength="1" style="--d:0.58s" x1="165" y1="338" x2="165" y2="358"/><line class="ln" pathLength="1" style="--d:0.59s" x1="190" y1="338" x2="190" y2="358"/><line class="ln" pathLength="1" style="--d:0.60s" x1="215" y1="338" x2="215" y2="358"/><line class="ln" pathLength="1" style="--d:0.61s" x1="240" y1="338" x2="240" y2="358"/><line class="ln" pathLength="1" style="--d:0.62s" x1="265" y1="338" x2="265" y2="358"/><line class="ln" pathLength="1" style="--d:0.62s" x1="290" y1="338" x2="290" y2="358"/><line class="ln" pathLength="1" style="--d:0.63s" x1="315" y1="338" x2="315" y2="358"/><line class="ln" pathLength="1" style="--d:0.64s" x1="340" y1="338" x2="340" y2="358"/><line class="ln" pathLength="1" style="--d:0.65s" x1="365" y1="338" x2="365" y2="358"/><line class="ln" pathLength="1" style="--d:0.66s" x1="390" y1="338" x2="390" y2="358"/><line class="ln" pathLength="1" style="--d:0.66s" x1="415" y1="338" x2="415" y2="358"/><line class="ln" pathLength="1" style="--d:0.67s" x1="440" y1="338" x2="440" y2="358"/><line class="ln" pathLength="1" style="--d:0.68s" x1="465" y1="338" x2="465" y2="358"/><line class="ln" pathLength="1" style="--d:0.69s" x1="490" y1="338" x2="490" y2="358"/><circle class="ln" pathLength="1" style="--d:0.69s" cx="116" cy="333" r="2.4"/><circle class="ln" pathLength="1" style="--d:0.69s" cx="125" cy="333" r="2.4"/><circle class="ln" pathLength="1" style="--d:0.70s" cx="134" cy="333" r="2.4"/><circle class="ln" pathLength="1" style="--d:0.70s" cx="143" cy="333" r="2.4"/><circle class="ln" pathLength="1" style="--d:0.70s" cx="152" cy="333" r="2.4"/><circle class="ln" pathLength="1" style="--d:0.71s" cx="161" cy="333" r="2.4"/><circle class="ln" pathLength="1" style="--d:0.71s" cx="170" cy="333" r="2.4"/><circle class="ln" pathLength="1" style="--d:0.71s" cx="179" cy="333" r="2.4"/><circle class="ln" pathLength="1" style="--d:0.72s" cx="188" cy="333" r="2.4"/><circle class="ln" pathLength="1" style="--d:0.72s" cx="226" cy="333" r="2.4"/><circle class="ln" pathLength="1" style="--d:0.72s" cx="235" cy="333" r="2.4"/><circle class="ln" pathLength="1" style="--d:0.72s" cx="244" cy="333" r="2.4"/><circle class="ln" pathLength="1" style="--d:0.73s" cx="253" cy="333" r="2.4"/><circle class="ln" pathLength="1" style="--d:0.73s" cx="262" cy="333" r="2.4"/><circle class="ln" pathLength="1" style="--d:0.73s" cx="271" cy="333" r="2.4"/><circle class="ln" pathLength="1" style="--d:0.74s" cx="280" cy="333" r="2.4"/><circle class="ln" pathLength="1" style="--d:0.74s" cx="289" cy="333" r="2.4"/><circle class="ln" pathLength="1" style="--d:0.74s" cx="298" cy="333" r="2.4"/><circle class="ln" pathLength="1" style="--d:0.75s" cx="307" cy="333" r="2.4"/><circle class="ln" pathLength="1" style="--d:0.75s" cx="316" cy="333" r="2.4"/><circle class="ln" pathLength="1" style="--d:0.75s" cx="325" cy="333" r="2.4"/><circle class="ln" pathLength="1" style="--d:0.75s" cx="334" cy="333" r="2.4"/><circle class="ln" pathLength="1" style="--d:0.76s" cx="343" cy="333" r="2.4"/><circle class="ln" pathLength="1" style="--d:0.76s" cx="352" cy="333" r="2.4"/><circle class="ln" pathLength="1" style="--d:0.76s" cx="361" cy="333" r="2.4"/><circle class="ln" pathLength="1" style="--d:0.77s" cx="370" cy="333" r="2.4"/><circle class="ln" pathLength="1" style="--d:0.77s" cx="379" cy="333" r="2.4"/><circle class="ln" pathLength="1" style="--d:0.77s" cx="388" cy="333" r="2.4"/><circle class="ln" pathLength="1" style="--d:0.78s" cx="397" cy="333" r="2.4"/><circle class="ln" pathLength="1" style="--d:0.78s" cx="436" cy="333" r="2.4"/><circle class="ln" pathLength="1" style="--d:0.78s" cx="445" cy="333" r="2.4"/><circle class="ln" pathLength="1" style="--d:0.78s" cx="454" cy="333" r="2.4"/><circle class="ln" pathLength="1" style="--d:0.79s" cx="463" cy="333" r="2.4"/><circle class="ln" pathLength="1" style="--d:0.79s" cx="472" cy="333" r="2.4"/><circle class="ln" pathLength="1" style="--d:0.79s" cx="481" cy="333" r="2.4"/><circle class="ln" pathLength="1" style="--d:0.80s" cx="490" cy="333" r="2.4"/><circle class="ln" pathLength="1" style="--d:0.80s" cx="499" cy="333" r="2.4"/><circle class="ln" pathLength="1" style="--d:0.80s" cx="508" cy="333" r="2.4"/><rect class="ln" pathLength="1" style="--d:0.83s" x="110" y="318" width="80" height="10"/><rect class="ln" pathLength="1" style="--d:0.86s" x="110" y="307" width="80" height="10"/><rect class="ln" pathLength="1" style="--d:0.89s" x="110" y="296" width="80" height="10"/><rect class="ln" pathLength="1" style="--d:0.92s" x="110" y="285" width="80" height="10"/><rect class="ln" pathLength="1" style="--d:0.95s" x="430" y="318" width="80" height="10"/><rect class="ln" pathLength="1" style="--d:0.98s" x="430" y="307" width="80" height="10"/><rect class="ln" pathLength="1" style="--d:1.01s" x="430" y="296" width="80" height="10"/><rect class="ln" pathLength="1" style="--d:1.04s" x="430" y="285" width="80" height="10"/><rect class="ln" pathLength="1" style="--d:1.07s" x="220" y="286" width="180" height="42"/><rect class="ln dash" pathLength="1" style="--d:1.10s" x="105" y="276" width="410" height="6"/><path class="ln" pathLength="1" style="--d:1.13s" d="M70,370 V262 H550 V370"/><rect class="ln" pathLength="1" style="--d:1.16s" x="70" y="262" width="480" height="14"/><rect class="ln" pathLength="1" style="--d:1.19s" x="60" y="236" width="500" height="22"/><rect class="ln" pathLength="1" style="--d:1.21s" x="70" y="86" width="10" height="150"/><rect class="ln" pathLength="1" style="--d:1.23s" x="100" y="86" width="10" height="150"/><rect class="ln" pathLength="1" style="--d:1.25s" x="130" y="86" width="10" height="150"/><rect class="ln" pathLength="1" style="--d:1.27s" x="160" y="86" width="10" height="150"/><rect class="ln" pathLength="1" style="--d:1.29s" x="190" y="86" width="10" height="150"/><rect class="ln" pathLength="1" style="--d:1.31s" x="220" y="86" width="10" height="150"/><rect class="ln" pathLength="1" style="--d:1.33s" x="250" y="86" width="10" height="150"/><rect class="ln" pathLength="1" style="--d:1.35s" x="280" y="86" width="10" height="150"/><rect class="ln" pathLength="1" style="--d:1.37s" x="310" y="86" width="10" height="150"/><rect class="ln" pathLength="1" style="--d:1.39s" x="340" y="86" width="10" height="150"/><rect class="ln" pathLength="1" style="--d:1.41s" x="370" y="86" width="10" height="150"/><rect class="ln" pathLength="1" style="--d:1.43s" x="400" y="86" width="10" height="150"/><rect class="ln" pathLength="1" style="--d:1.45s" x="430" y="86" width="10" height="150"/><rect class="ln" pathLength="1" style="--d:1.47s" x="460" y="86" width="10" height="150"/><rect class="ln" pathLength="1" style="--d:1.49s" x="490" y="86" width="10" height="150"/><rect class="ln" pathLength="1" style="--d:1.51s" x="520" y="86" width="10" height="150"/><rect class="ln" pathLength="1" style="--d:1.53s" x="550" y="86" width="10" height="150"/></g>
+  <text class="die-label" x="310" y="312" text-anchor="middle">SoC</text>
+  <g class="heats"><path class="heat" pathLength="1" style="--h:0.00s" d="M255,282 Q263,271 255,260 Q247,249 255,238 Q263,227 255,216 Q247,205 255,194 Q263,183 255,172 Q247,161 255,150 Q263,139 255,128 Q247,117 255,106 Q263,95 255,84"/><path class="heat" pathLength="1" style="--h:0.35s" d="M285,282 Q293,271 285,260 Q277,249 285,238 Q293,227 285,216 Q277,205 285,194 Q293,183 285,172 Q277,161 285,150 Q293,139 285,128 Q277,117 285,106 Q293,95 285,84"/><path class="heat" pathLength="1" style="--h:0.70s" d="M315,282 Q323,271 315,260 Q307,249 315,238 Q323,227 315,216 Q307,205 315,194 Q323,183 315,172 Q307,161 315,150 Q323,139 315,128 Q307,117 315,106 Q323,95 315,84"/><path class="heat" pathLength="1" style="--h:1.05s" d="M345,282 Q353,271 345,260 Q337,249 345,238 Q353,227 345,216 Q337,205 345,194 Q353,183 345,172 Q337,161 345,150 Q353,139 345,128 Q337,117 345,106 Q353,95 345,84"/><path class="heat" pathLength="1" style="--h:1.40s" d="M375,282 Q383,271 375,260 Q367,249 375,238 Q383,227 375,216 Q367,205 375,194 Q383,183 375,172 Q367,161 375,150 Q383,139 375,128 Q367,117 375,106 Q383,95 375,84"/></g>
+  <g class="labels"><line class="lead" x1="566" y1="150" x2="624" y2="150"/><text x="636" y="154">heat sink</text><line class="lead" x1="556" y1="269" x2="624" y2="269"/><text x="636" y="273">lid + TIM</text><line class="lead" x1="516" y1="300" x2="624" y2="300"/><text x="636" y="304">HBM</text><line class="lead" x1="536" y1="348" x2="624" y2="348"/><text x="636" y="352">Si interposer + TSVs</text><line class="lead" x1="576" y1="386" x2="624" y2="386"/><text x="636" y="390">substrate</text><line class="lead" x1="562" y1="410" x2="624" y2="410"/><text x="636" y="414">BGA</text><line class="lead" x1="-6" y1="333" x2="104" y2="333"/><text x="-12" y="337" text-anchor="end">μbumps</text><line class="lead" x1="-6" y1="363" x2="100" y2="363"/><text x="-12" y="367" text-anchor="end">C4 bumps</text><line class="lead" x1="-6" y1="429" x2="14" y2="429"/><text x="-12" y="433" text-anchor="end">board</text></g>
+</svg>
+        <figcaption class="fig mono">fig. 1: 2.5D package, cross-section. heat goes up.</figcaption>
+      </figure>
     </section>
 
-    <section class="card intro">
-      <div class="avatar">
-        <svg class="ring" viewBox="0 0 200 200" aria-hidden="true">
-          <defs>
-            <path id="circle" d="M100,100 m-88,0 a88,88 0 1,1 176,0 a88,88 0 1,1 -176,0"/>
-          </defs>
-          <text><textPath href="#circle" textLength="550" lengthAdjust="spacing">ALAINA ZHANG · ALAINA ZHANG · ALAINA ZHANG · </textPath></text>
-        </svg>
-        <img src="photo.jpg" alt="Alaina Zhang">
+    <section class="block" id="about">
+      <div class="about">
+        <div class="avatar">
+          <svg class="ring" viewBox="0 0 200 200" aria-hidden="true">
+            <defs><path id="circle" d="M100,100 m-88,0 a88,88 0 1,1 176,0 a88,88 0 1,1 -176,0"/></defs>
+            <text><textPath href="#circle" textLength="550" lengthAdjust="spacing">ALAINA ZHANG · MS&amp;E · STANFORD · </textPath></text>
+          </svg>
+          <img src="photo.jpg" alt="Alaina Zhang">
+        </div>
+        <div>
+          <span class="eyebrow mono">00 / about</span>
+          <h2>Hey there!</h2>
+          <p>I'm Alaina, a <span class="cardinal">Stanford</span> Materials Science and Engineering student interested in
+          <strong>defense technology, hardware, and deep tech</strong>. I care most about the physical layer of computing:
+          the materials, fabrication, and packaging that make chips work, and the power and heat problems that come with running them at data-center scale.</p>
+          <p>My work so far has covered battery research, water-system management, and science-policy advocacy.
+          I like projects that connect technical research with <em class="serif">commercialization</em> and <em class="serif">policy</em>.</p>
+          <ol class="timeline">
+            <li class="now"><span class="label mono">now</span>Materials Science &amp; Engineering @ Stanford</li>
+            <li><span class="label mono">previously</span>Battery research · Water systems · Policy advocacy (H.R. 2950) · TreeHacks · ASES</li>
+          </ol>
+        </div>
       </div>
+    </section>
 
-      <h3 class="serif">Hey there!</h3>
-      <p class="lead">
-        I'm <strong class="serif">Alaina</strong>, a <span class="cardinal">Stanford</span> Materials Science
-        and Engineering student interested in <strong>defense technology, hardware, and deep tech</strong>.
-        I like work that connects technical research with commercialization and policy.
-      </p>
+    <section class="block" id="stack">
+      <span class="eyebrow mono">01 / interests</span>
+      <h2>the <em>material</em> stack</h2>
+      <p class="sub">What I want to work on, roughly from the transistor up to the data center.</p>
+      <div class="tiles">
+        <article class="tile">
+          <div class="el"><span class="z mono">14</span><span class="sym">Si</span><span class="nm mono">silicon</span></div>
+          <h4>Chip materials & fabrication</h4>
+          <p>The materials and process steps that decide what a chip can do.</p>
+        </article>
+        <article class="tile">
+          <div class="el"><span class="z mono">29</span><span class="sym">Cu</span><span class="nm mono">copper</span></div>
+          <h4>Advanced packaging</h4>
+          <p>Chiplets, hybrid bonding, and interconnects. More performance from the package itself.</p>
+        </article>
+        <article class="tile">
+          <div class="el"><span class="z mono">—</span><span class="sym">GaN</span><span class="nm mono">gallium nitride</span></div>
+          <h4>Power electronics</h4>
+          <p>Wide-bandgap devices that waste less energy converting power.</p>
+        </article>
+        <article class="tile">
+          <div class="el"><span class="z mono">—</span><span class="sym">pJ</span><span class="nm mono">picojoules / op</span></div>
+          <h4>Energy-efficient computing</h4>
+          <p>Cutting the energy cost of every operation in the data center.</p>
+        </article>
+        <article class="tile">
+          <div class="el"><span class="z mono">—</span><span class="sym">W/mK</span><span class="nm mono">thermal conductivity</span></div>
+          <h4>Thermal management & cooling</h4>
+          <p>Moving heat out of very dense hardware: TIMs, cold plates, liquid cooling.</p>
+        </article>
+        <article class="tile">
+          <div class="el"><span class="z mono">6</span><span class="sym">C</span><span class="nm mono">embodied carbon</span></div>
+          <h4>Sustainable materials</h4>
+          <p>Lower-impact materials for the infrastructure behind computing.</p>
+        </article>
+        <article class="tile">
+          <div class="el"><span class="z mono">22</span><span class="sym">Ti</span><span class="nm mono">titanium</span></div>
+          <h4>Defense tech & hardware</h4>
+          <p>Hard-tech systems where materials are the edge.</p>
+        </article>
+      </div>
+    </section>
 
-      <ol class="timeline">
-        <li class="now">
-          <span class="label mono">Now</span>
-          <span>Materials Science &amp; Engineering @ Stanford</span>
-        </li>
-        <li>
-          <span class="label mono">Previously</span>
-          <span>Battery research · Water-system management · Science-policy advocacy · TreeHacks · ASES</span>
-        </li>
+    <section class="block" id="log">
+      <span class="eyebrow mono">02 / experience</span>
+      <h2>lab <em>notebook</em></h2>
+      <p class="sub">Research, infrastructure, policy, and working with startups.</p>
+      <ol class="log">
+        <li><span class="idx mono">01</span><span class="tag mono">research</span><span class="what">Battery research</span><span class="desc">Materials research for energy storage.</span></li>
+        <li><span class="idx mono">02</span><span class="tag mono">infrastructure</span><span class="what">Water-system management</span><span class="desc">Running and improving water infrastructure.</span></li>
+        <li><span class="idx mono">03</span><span class="tag mono">policy</span><span class="what">Science-policy advocacy</span><span class="desc">Advocacy work, including on H.R. 2950.</span></li>
+        <li><span class="idx mono">04</span><span class="tag mono">tech</span><span class="what">TreeHacks</span><span class="desc">Working with technology companies at Stanford's flagship hackathon.</span></li>
+        <li><span class="idx mono">05</span><span class="tag mono">venture</span><span class="what">ASES</span><span class="desc">Working with venture firms on the commercial side of deep tech.</span></li>
       </ol>
+    </section>
 
-      <p>A few things I've worked on:</p>
-      <ul class="highlights">
-        <li><span class="emoji">🔋</span> Did <strong>battery research</strong> on the materials behind energy storage.</li>
-        <li><span class="emoji">💧</span> Worked on <strong>water-system management</strong>.</li>
-        <li><span class="emoji">🏛️</span> Did <strong>science-policy advocacy</strong>, including work related to <strong>H.R. 2950</strong>.</li>
-        <li><span class="emoji">💻</span> Worked with technology companies through <strong>TreeHacks</strong>, Stanford's flagship hackathon.</li>
-        <li><span class="emoji">📈</span> Worked with venture firms through <strong>ASES</strong>.</li>
-      </ul>
-
-      <div class="links mono" id="contact">
-        <a href="mailto:alainaz@stanford.edu">✉ alainaz@stanford.edu</a>
-        <a href="https://github.com/alainaazhang" target="_blank" rel="noreferrer">⌥ github</a>
-        <a href="https://www.linkedin.com/in/alainazhang/" target="_blank" rel="noreferrer">in linkedin</a>
+    <section class="block contact" id="contact">
+      <span class="eyebrow mono">03 / contact</span><br>
+      <a class="big" href="mailto:alainaz@stanford.edu">say hi <span>→</span></a>
+      <div class="links mono">
+        <a href="mailto:alainaz@stanford.edu">alainaz@stanford.edu</a>
+        <a href="https://www.linkedin.com/in/alainazhang/" target="_blank" rel="noreferrer">linkedin</a>
+        <a href="https://github.com/alainaazhang" target="_blank" rel="noreferrer">github</a>
       </div>
     </section>
 
-    <section class="section" id="interests">
-      <h3 class="serif">Interests</h3>
-      <p class="sub">What I'm most excited to work on.</p>
-      <div class="grid">
-        <article class="tile">
-          <span class="tag mono">semiconductors</span>
-          <h4 class="serif">Chip Materials &amp; Fabrication</h4>
-          <p>The materials and process steps that set what chips can do.</p>
-        </article>
-        <article class="tile">
-          <span class="tag mono">semiconductors</span>
-          <h4 class="serif">Advanced Packaging</h4>
-          <p>Chiplets, interconnects, and getting more out of the package.</p>
-        </article>
-        <article class="tile">
-          <span class="tag mono">semiconductors</span>
-          <h4 class="serif">Power Electronics</h4>
-          <p>Wide-bandgap devices and converting power efficiently.</p>
-        </article>
-        <article class="tile">
-          <span class="tag mono">data centers</span>
-          <h4 class="serif">Energy-Efficient Computing</h4>
-          <p>Cutting the energy cost of every computation.</p>
-        </article>
-        <article class="tile">
-          <span class="tag mono">data centers</span>
-          <h4 class="serif">Thermal Management &amp; Cooling</h4>
-          <p>Moving heat out of dense hardware.</p>
-        </article>
-        <article class="tile">
-          <span class="tag mono">data centers</span>
-          <h4 class="serif">Sustainable Materials</h4>
-          <p>Lower-impact materials for computing infrastructure.</p>
-        </article>
-        <article class="tile">
-          <span class="tag mono">deep tech</span>
-          <h4 class="serif">Defense Technology &amp; Hardware</h4>
-          <p>Hard-tech systems where the materials make the difference.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="section" id="work">
-      <h3 class="serif">Experience</h3>
-      <p class="sub">Research, policy, and work with startups.</p>
-      <div class="grid">
-        <article class="tile">
-          <span class="tag mono">research</span>
-          <h4 class="serif">Battery Research</h4>
-          <p>Materials research for energy storage.</p>
-        </article>
-        <article class="tile">
-          <span class="tag mono">systems</span>
-          <h4 class="serif">Water-System Management</h4>
-          <p>Managing and improving water infrastructure.</p>
-        </article>
-        <article class="tile">
-          <span class="tag mono">policy</span>
-          <h4 class="serif">Science-Policy Advocacy</h4>
-          <p>Advocacy work, including on H.R. 2950.</p>
-        </article>
-        <article class="tile">
-          <span class="tag mono">stanford</span>
-          <h4 class="serif">TreeHacks</h4>
-          <p>Working with technology companies at Stanford's hackathon.</p>
-        </article>
-        <article class="tile">
-          <span class="tag mono">stanford</span>
-          <h4 class="serif">ASES</h4>
-          <p>Working with venture firms on the startup side of deep tech.</p>
-        </article>
-      </div>
-    </section>
+    <footer class="mono"><span>© 2026 alaina zhang</span><span>stanford, ca</span></footer>
   </main>
-
-  <footer class="mono">© 2026 Alaina Zhang</footer>
 </body>
 </html>
